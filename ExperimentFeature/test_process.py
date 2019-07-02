@@ -4,9 +4,9 @@ import time, queue
 
 
 def count_time(func):
-    def wrapper(args, *kwargs):
+    def wrapper(*args, **kwargs):
         time1 = time.clock()
-        func(args, *kwargs)
+        func(*args, **kwargs)
         print(func.__name__, time.clock() - time1)
     return wrapper
 
@@ -57,12 +57,13 @@ def list_test(num):
     x = [i ** 3.491 for i in range(num)]
 
 if __name__ == '__main__':
-    num = 10000000
-    multi_process(num)
-    time.sleep(5)
-    multi_thread(num)
-    time.sleep(5)
-    single(num)
-    time.sleep(5)
-    list_test(num)
-
+    # num = 10000000
+    # multi_process(num)
+    # time.sleep(5)
+    # multi_thread(num)
+    # time.sleep(5)
+    # single(num)
+    # time.sleep(5)
+    # list_test(num)
+    value = mp.Value('d', 1)
+    array = mp.Array('i', [1, 2, 3])
