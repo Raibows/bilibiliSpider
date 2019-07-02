@@ -1,7 +1,6 @@
 '''
 spider 100 ranking list from bilibili
 '''
-
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import re
@@ -10,22 +9,19 @@ import json
 import csv
 import time
 import os
-from fake_headers import Headers
+from biblibiliSpider.SpiderModule import category, rank_types, headers
+
+
 
 '''
 Global params
 csv_path is the local address to store the info in csv format
-database is the temp dict to store every video raw info
-points_data is the temp list to store every video points
-av_data is the temp list to store every video avid
 category is a multiple list to store different url identifiers for different types of videos
 rank_types is a choice dict for total rank or origin rank 
 '''
+
 headers = Headers(browser='chrome')
 csv_path = "bilibili_data.csv"
-database = {}
-points_data = []
-av_data = []
 category = [
     ['0', 'all'],
     ['1', 'animation'],
@@ -45,6 +41,23 @@ rank_types = {
     'all': 'https://www.bilibili.com/ranking/all/',
     'origin': 'https://www.bilibili.com/ranking/origin/'
 }
+
+
+
+
+
+
+'''
+Global params
+database is the temp dict to store every video raw info
+points_data is the temp list to store every video points
+av_data is the temp list to store every video avid
+'''
+
+database = {}
+points_data = []
+av_data = []
+
 
 def initial_all():
     '''
