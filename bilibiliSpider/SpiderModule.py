@@ -78,6 +78,9 @@ class bilibili_spider():
         url = self.api_video_html.format(aid)
         res = requests.get(url, headers=self.get_random_headers())
         res = res.text
+        error_flag = '<div class="error-text">啊叻？视频不见了？</div>'
+        if error_flag in res:
+            return -1
         video_time = re.findall(r'\"timelength\":\d+', res)[0]
         video_time = re.findall(r'\d+', video_time)[0]
         video_time = int(eval(video_time) / 1000)
@@ -92,10 +95,14 @@ class bilibili_spider():
         url = self.api_video_html.format(aid)
         res = requests.get(url, headers=self.get_random_headers())
         res = res.text
+        error_flag = '<div class="error-text">啊叻？视频不见了？</div>'
+        if error_flag in res:
+            return -1
         try:
             upload_time = re.findall(r'\"uploadDate\" content=\"\d+-\d+-\d+\s+\d+:\d+:\d+\">', res)[0]
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
         except Exception as e:
+            print(aid)
             print('{} {}'.format(e, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
             upload_time = re.findall(r'\"time\":\"\d+-\d+-\d+\s+\d+:\d+:\d+\",', res)[0]
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
@@ -131,6 +138,8 @@ class bilibili_spider():
                                        href=re.compile('//space.bilibili.com/'))
 
 
+            # print(titles)
+            # os._exit(-1)
 
             for i in range(len(points)):
                 aid = re.findall(r'av\d+/', str(titles[i]))
@@ -147,9 +156,12 @@ class bilibili_spider():
 
 
 
-
+# test_aid = 57645778
+# test_aid = 55406216
 # test = bilibili_spider()
-# x = test.get_video_upload_time_info(19308734)
-# x = test.get_raw_video_info(19308734)
+# # x = test.get_video_upload_time_info(57649778)
+# # # x = test.get_raw_video_info(19308734)
+# # # x = test.get_raw_video_info(19308734)
+# x = test.get_raw_video_info(test_aid)
 # print(x)
 
