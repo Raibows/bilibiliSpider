@@ -9,7 +9,7 @@ import json
 import csv
 import time
 import os
-from biblibiliSpider.SpiderModule import category, rank_types, headers
+from bilibiliSpider.SpiderModule import category, rank_types, headers
 
 
 

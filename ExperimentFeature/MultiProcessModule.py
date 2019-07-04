@@ -1,4 +1,4 @@
-from biblibiliSpider import SpiderModule
+from bilibiliSpider import SpiderModule
 import multiprocessing as mp
 import time
 import threading

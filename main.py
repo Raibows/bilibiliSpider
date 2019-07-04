@@ -1,6 +1,6 @@
 import time
 import csv
-from biblibiliSpider import SpiderModule, ProcessRawModule
+from bilibiliSpider import SpiderModule, ProcessRawModule
 
 default_spider = SpiderModule.bilibili_spider()
 

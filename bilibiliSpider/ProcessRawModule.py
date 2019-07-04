@@ -2,8 +2,7 @@
 a module for processing json raw info to serialize info
 '''
 import time
-
-from biblibiliSpider import SpiderModule
+from bilibiliSpider import SpiderModule
 
 default_spider = SpiderModule.bilibili_spider()
 
