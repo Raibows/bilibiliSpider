@@ -8,6 +8,7 @@ default_spider = SpiderModule.bilibili_spider()
 def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank_type='origin'):
     video_category = list(spider.video_category.keys())
     video_category.remove('all')
+    # video_category = ['guochuang']
     info = []
     head = ['0rank_type', '1video_type', '2video_id', '3ranking',
                  '4video_title', '5video_upload_time', '6video_length_time',
@@ -59,3 +60,8 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
 
 if __name__ == '__main__':
     export_to_csv()
+    # try:
+    #     print(x)
+    # except Exception as e:
+    #     print(e)
+    # print('hhh')

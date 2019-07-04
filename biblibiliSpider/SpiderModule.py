@@ -6,6 +6,7 @@ import os
 import urllib
 from bs4 import BeautifulSoup
 import re
+import time
 
 
 
@@ -94,7 +95,8 @@ class bilibili_spider():
         try:
             upload_time = re.findall(r'\"uploadDate\" content=\"\d+-\d+-\d+\s+\d+:\d+:\d+\">', res)[0]
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
-        except:
+        except Exception as e:
+            print('{} {}'.format(e, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
             upload_time = re.findall(r'\"time\":\"\d+-\d+-\d+\s+\d+:\d+:\d+\",', res)[0]
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
         return upload_time
@@ -112,7 +114,8 @@ class bilibili_spider():
         suffix = self.rank_time_category.get(rank_time_type)
         try:
             url = self.api_rank.format(self.rank_category.get(rank_type), self.video_category.get(video_type)) + suffix
-        except:
+        except Exception as e:
+            print('{} {}'.format(e, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
             print('ERROR IN {} VIDEO_TYPE={}'.format(sys._getframe().f_code.co_name, video_type))
             os._exit(-1)
         else:
