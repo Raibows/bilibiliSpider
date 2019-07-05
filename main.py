@@ -3,6 +3,7 @@ import csv
 from bilibiliSpider import SpiderModule, ProcessRawModule, MasModule
 
 default_spider = SpiderModule.bilibili_spider()
+default_spider.mas_proxy_flag = False
 
 #make your own rule to collect info
 def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank_type='origin'):
@@ -18,7 +19,7 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
                  '17spider_time'
             ]
     info.append(head)
-
+    count = 0
     for video_type in video_category:
         MasModule.mas_random_stop()
         videos = spider.get_rank_video_info(rank_type=rank_type, video_type=video_type)[1:]
@@ -33,6 +34,7 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
             video_info[7] = temp[5]
 
             video_aid = video_info[2]
+
             author_mid = video_info[7]
 
             video_info[5] = spider.get_video_upload_time_info(video_aid)
@@ -46,7 +48,10 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
 
             video_info[17] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
 
+            count += 1
+            print('{} now, got aid {} {}'.format(count, video_aid, video_info[17]))
             info.append(video_info)
+            # print('got aid {} {}'.format(video_info[2], video_info[17]))
 
     with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
         print('exporting now !')
@@ -60,8 +65,3 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
 
 if __name__ == '__main__':
     export_to_csv()
-    # try:
-    #     print(x)
-    # except Exception as e:
-    #     print(e)
-    # print('hhh')

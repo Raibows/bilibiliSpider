@@ -7,6 +7,7 @@ import urllib
 from bs4 import BeautifulSoup
 import re
 import time
+from bilibiliSpider import MasModule
 
 
 
@@ -17,6 +18,8 @@ class bilibili_spider():
         self.api_user_info = 'https://api.bilibili.com/x/relation/stat?vmid={}' #user mid
         self.api_rank = 'https://www.bilibili.com/ranking/{}/{}' #rank category, video category
         self.api_video_html = 'https://www.bilibili.com/video/av{}/' #video aid
+        self.api_latest_video = 'https://api.bilibili.com/x/web-interface/newlist?&rid={}&pn={}&ps={}' #3 params
+        self.mas_proxy_flag = False  # ip proxy default is false
         self.video_category = {
             'all': '0',
             'animation': '1',
@@ -42,6 +45,36 @@ class bilibili_spider():
             'week' : '/0/7/',
             'month' : '/0/30/'
         }
+        self.video_rid_category = {
+            'animation' : [24, 27, 25, 47, 86],
+            'guochuang' : [168, 169, 170, 153, 195],
+            'music' : [31, 29, 59, 30, 130, 28],
+            'dance' : [154, 20, 156],
+            'game' : [171, 17, 65, 172, 121, 136],
+            'technology' : [39, 124, 122, 96, 98, 176],
+            'digital' : [95, 189, 190, 191],
+            'life' : [138, 21, 75, 76, 161, 162, 163, 174],
+            'guichu' : [22, 26, 126, 127],
+            'fashion' : [157, 158, 159, 164, 192],
+            'entertainment' : [71, 137, 131],
+            'movie' : [182, 183, 184, 85]
+         }
+
+
+    def __get_html_requests(self, url):
+        if self.mas_proxy_flag:
+            try_count = 0
+            html = MasModule.mas_get_html(url)
+            while html == None:
+                try_count += 1
+                if try_count == 2:
+                    return requests.get(url, headers=self.get_random_headers())
+                time.sleep(1)
+                html = MasModule.mas_get_html(url)
+            return html
+        else:
+            return requests.get(url, headers=self.get_random_headers())
+
     def get_random_headers(self, browser='Chrome'):
         '''
         :return:random headers
@@ -56,7 +89,7 @@ class bilibili_spider():
         :return: dict, this video's raw info
         '''
         url = self.api_video_info.format(aid)
-        res = requests.get(url, headers=self.get_random_headers())
+        res = self.__get_html_requests(url)
         res_dict = res.json()
         return res_dict
 
@@ -66,7 +99,7 @@ class bilibili_spider():
         :return: dict, this user's raw info
         '''
         url = self.api_user_info.format(mid)
-        res = requests.get(url, headers=self.get_random_headers())
+        res = self.__get_html_requests(url)
         res_dict = res.json()
         return res_dict
 
@@ -76,7 +109,7 @@ class bilibili_spider():
         :return: the time length of a video, unit: seconds
         '''
         url = self.api_video_html.format(aid)
-        res = requests.get(url, headers=self.get_random_headers())
+        res = self.__get_html_requests(url)
         res = res.text
         error_flag = '<div class="error-text">啊叻？视频不见了？</div>'
         if error_flag in res:
@@ -93,9 +126,13 @@ class bilibili_spider():
         :return: the upload time of a video, exp 2019-06-29 16:59:30
         '''
         url = self.api_video_html.format(aid)
-        res = requests.get(url, headers=self.get_random_headers())
-        res = res.text
         error_flag = '<div class="error-text">啊叻？视频不见了？</div>'
+        try:
+            res = self.__get_html_requests(url)
+            res = res.text
+        except Exception as e:
+            print('{} {}'.format(aid ,e))
+            res = error_flag
         if error_flag in res:
             return -1
         try:
@@ -108,6 +145,13 @@ class bilibili_spider():
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
         return upload_time
 
+    def get_latest_video_info(self, rid, ps=1, pn=50):
+        '''
+        :param rid: the video category code, you could see them in rid_appendix.txt
+        :param ps: the page number of latest, default is the first page
+        :param pn: the size of page, default is 50, no more than 50
+        :return:
+        '''
 
     def get_rank_video_info(self, rank_type='origin', video_type='all', rank_time_type='day'):
         '''
@@ -126,8 +170,11 @@ class bilibili_spider():
             print('ERROR IN {} VIDEO_TYPE={}'.format(sys._getframe().f_code.co_name, video_type))
             os._exit(-1)
         else:
-            res = urllib.request.Request(url, headers=self.get_random_headers())
-            html = urllib.request.urlopen(res).read().decode('utf-8')
+            # res = urllib.request.Request(url, headers=self.get_random_headers())
+            # html = urllib.request.urlopen(res).read().decode('utf-8')
+            res = self.__get_html_requests(url)
+            html = res.text
+            # os._exit(-1)
             soup = BeautifulSoup(html, features='html5lib')
             points = soup.find_all('div',
                                    {'class' : 'pts'})
@@ -154,14 +201,81 @@ class bilibili_spider():
                 info.append([rank_type, video_type, i+1, aid, title, up_mid])
             return info
 
+    def get_rid_category(self, port_begin=2, port_end=200):
+        '''
+        :param port_begin: =0 or 1, return all latest video categories videos
+        :param port_end:
+        :return: [{rid,tname}]
+        '''
+        info = []
+        for i in range(port_begin, port_end):
+            try:
+                MasModule.mas_random_stop(0.1, 0.3)
+                url = self.api_latest_video.format(i, 1, 1)
+                res = self.__get_html_requests(url)
+                res_dict = res.json()
+                if res_dict['data']['page']['count'] > 0:
+                    tname = res_dict['data']['archives'][0]['tname']
+                    if tname == '':
+                        continue
+                    print(i, tname)
+                    info.append({
+                        'rid' : i,
+                        'tname' : tname
+                    })
+            except Exception as e:
+                print(e)
+                print(i, 'end')
+                break
+        return info
 
 
-# test_aid = 57645778
+# def get_proxy():
+#     return requests.get("http://39.97.50.177:5010/get/").content
+#
+# def delete_proxy(proxy):
+#     requests.get("http://39.97.50.177:5010/delete/?proxy={}".format(proxy))
+#
+# # your spider code
+#
+# def getHtml(url):
+#     # ....
+#     retry_count = 5
+#     proxy = get_proxy()
+#     proxy = '118.230.232.233:8080'
+#     while retry_count > 0:
+#         try:
+#             html = requests.get(url, proxies={"http": "http://{}".format(proxy)})
+#             # 使用代理访问
+#             return html
+#         except Exception:
+#             retry_count -= 1
+#     # 出错5次, 删除代理池中代理
+#     delete_proxy(proxy)
+#     return None
+
+
+
+
+
+
+
+
+
+
+# test_aid = 57721760
 # test_aid = 55406216
 # test = bilibili_spider()
-# # x = test.get_video_upload_time_info(57649778)
-# # # x = test.get_raw_video_info(19308734)
-# # # x = test.get_raw_video_info(19308734)
+# x = test.get_video_upload_time_info(57649778)
+# # x = test.get_raw_video_info(19308734)
+# # x = test.get_raw_video_info(19308734)
 # x = test.get_raw_video_info(test_aid)
-# print(x)
+# x = test.get_video_upload_time_info(test_aid)
 
+# test.mas_proxy_flag = True
+# x = test.get_video_length_info(test_aid)
+# print(x)
+# test = bilibili_spider()
+# res = requests.get(url=test. .format(57721760), proxies={"http": "http://{}".format(proxy)})
+#
+# print(res.text)
