@@ -1,6 +1,6 @@
 import time
 import csv
-from bilibiliSpider import SpiderModule, ProcessRawModule
+from bilibiliSpider import SpiderModule, ProcessRawModule, MasModule
 
 default_spider = SpiderModule.bilibili_spider()
 
@@ -20,7 +20,7 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
     info.append(head)
 
     for video_type in video_category:
-        time.sleep(0.1)
+        MasModule.mas_random_stop()
         videos = spider.get_rank_video_info(rank_type=rank_type, video_type=video_type)[1:]
         print('getting {} {} {}'.format(rank_type, video_type, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
         for temp in videos:
@@ -41,13 +41,12 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
             author_info = ProcessRawModule.process_raw_user_info(author_mid)
             video_info[8] = author_info[1]
             video_info[9] = author_info[0]
-            time.sleep(0.05)
+            MasModule.mas_random_stop(0.05)
             video_info[10:17] = ProcessRawModule.process_raw_video_info(video_aid)
 
             video_info[17] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
 
             info.append(video_info)
-            time.sleep(0.1)
 
     with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
         print('exporting now !')
