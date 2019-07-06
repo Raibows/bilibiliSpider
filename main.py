@@ -1,9 +1,12 @@
 import time
 import csv
-from bilibiliSpider import SpiderModule, ProcessRawModule, MasModule
+from bilibiliSpider import SpiderModule
+from bilibiliSpider import ProcessRawModule
+from bilibiliSpider import MasModule
+from bilibiliSpider import ToolModule
 
 default_spider = SpiderModule.bilibili_spider()
-default_spider.mas_proxy_flag = False
+default_spider.mas_proxy_flag = True
 
 #make your own rule to collect info
 def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank_type='origin'):
@@ -23,7 +26,9 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
     for video_type in video_category:
         MasModule.mas_random_stop()
         videos = spider.get_rank_video_info(rank_type=rank_type, video_type=video_type)[1:]
-        print('getting {} {} {}'.format(rank_type, video_type, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
+        log = 'getting {} {}'.format(rank_type, video_type)
+        print(log)
+        ToolModule.tool_log_info(level='info', message=log)
         for temp in videos:
             video_info = [i for i in head]
             video_info[0] = temp[0]
@@ -46,22 +51,24 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
             MasModule.mas_random_stop(0.05)
             video_info[10:17] = ProcessRawModule.process_raw_video_info(video_aid)
 
-            video_info[17] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+            video_info[17] = ToolModule.tool_get_current_time()
 
             count += 1
-            print('{} now, got aid {} {}'.format(count, video_aid, video_info[17]))
+            log = '{} now, got aid {}'.format(count, video_aid)
+            print(log)
+            ToolModule.tool_log_info(level='info', message=log)
             info.append(video_info)
-            # print('got aid {} {}'.format(video_info[2], video_info[17]))
 
     with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
-        print('exporting now !')
         writer = csv.writer(file)
         writer.writerows(info)
-        print('done !{}'.format(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
+        log = 'done !'
+        print(log)
+        ToolModule.tool_log_info(level='info', message=log)
 
 
 
 
 
 if __name__ == '__main__':
-    export_to_csv()
+    export_to_csv(csv_path='test.csv')

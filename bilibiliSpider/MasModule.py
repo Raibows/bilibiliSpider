@@ -6,12 +6,13 @@ import time
 import requests
 from fake_headers import Headers
 import socket
+from bilibiliSpider import ToolModule
 
 headers= Headers(browser='Chrome')
 
 #set your own proxy pool address, default is localhost port 5010
 _ip_proxy_pool_addr = '127.0.0.1:5010'
-
+# _ip_proxy_pool_addr = '39.97.50.177:5010'
 
 def mas_random_stop(begin=0, end=0.1):
     sleep_time = random.uniform(begin, end)
@@ -39,11 +40,12 @@ def mas_get_html(url):
             # 使用代理访问
             return html
         except Exception as e:
+            log = 'mas_get_html error {} {}'.format(url, e)
+            ToolModule.tool_log_info(level='error', message=log)
             print('mas_get_html error {}'.format(e))
             retry_count -= 1
     # 出错5次, 删除代理池中代理
     # print('zzzz', html)
-    print(proxy)
     mas_delete_proxy(proxy)
     return None
 

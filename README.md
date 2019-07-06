@@ -4,6 +4,7 @@
     - 2019/7/4 perfect try and catch
     - 2019/7/4 fix program not working bug for getting a not existed or deleted video info
     - 2019/7/5 add proxy function
+    - 2019/7/6 add error logging module
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
@@ -26,5 +27,8 @@
     I used a proxy pool to solve this problem. For the majority, it works well, 
     my ip is safe. But for some video category, the free proxy pool will be blocked
     by bilibili.com, such as 'guochuang' category. Yep, 'guochuang' became 
-    the problem hardship again. 
-
+    the problem hardship again. <br>
+3.2019/7/6<br>
+    It's necessary to add error logging module for analysis.
+    We need to delete these videos that could't get length or upload time through speical
+    flag in data processing. 

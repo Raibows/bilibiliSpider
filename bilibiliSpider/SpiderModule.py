@@ -1,13 +1,12 @@
 from fake_headers import Headers
 import requests
-import json
 import sys
 import os
-import urllib
 from bs4 import BeautifulSoup
 import re
 import time
 from bilibiliSpider import MasModule
+from bilibiliSpider import ToolModule
 
 
 
@@ -114,9 +113,15 @@ class bilibili_spider():
         error_flag = '<div class="error-text">啊叻？视频不见了？</div>'
         if error_flag in res:
             return -1
-        video_time = re.findall(r'\"timelength\":\d+', res)[0]
-        video_time = re.findall(r'\d+', video_time)[0]
-        video_time = int(eval(video_time) / 1000)
+        try:
+            video_time = re.findall(r'\"timelength\":\d+', res)[0]
+            video_time = re.findall(r'\d+', video_time)[0]
+            video_time = int(eval(video_time) / 1000)
+        except:
+            video_time = -1
+            log = 'ERROR IN GETTING VIDEO LENGTH AID {}'.format(aid)
+            ToolModule.tool_log_info(level='error', message=log)
+            print(log)
         return video_time
 
     def get_video_upload_time_info(self, aid):
@@ -131,16 +136,21 @@ class bilibili_spider():
             res = self.__get_html_requests(url)
             res = res.text
         except Exception as e:
-            print('{} {}'.format(aid ,e))
+            log = 'ERROR in getting video upload time {} {}'.format(aid, e)
+            ToolModule.tool_log_info(level='error', message=log)
+            print(log)
             res = error_flag
         if error_flag in res:
+            log = 'ERROR in getting video upload time {} {}'.format(aid, error_flag)
+            ToolModule.tool_log_info(level='error', message=log)
             return -1
         try:
             upload_time = re.findall(r'\"uploadDate\" content=\"\d+-\d+-\d+\s+\d+:\d+:\d+\">', res)[0]
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
         except Exception as e:
-            print(aid)
-            print('{} {}'.format(e, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
+            log = 'ERROR in getting video upload time {} {}'.format(aid, e)
+            ToolModule.tool_log_info(level='error', message=log)
+            print(log)
             upload_time = re.findall(r'\"time\":\"\d+-\d+-\d+\s+\d+:\d+:\d+\",', res)[0]
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
         return upload_time
@@ -166,8 +176,9 @@ class bilibili_spider():
         try:
             url = self.api_rank.format(self.rank_category.get(rank_type), self.video_category.get(video_type)) + suffix
         except Exception as e:
-            print('{} {}'.format(e, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
-            print('ERROR IN {} VIDEO_TYPE={}'.format(sys._getframe().f_code.co_name, video_type))
+            log = 'ERROR IN {} VIDEO_TYPE={} {}'.format(sys._getframe().f_code.co_name, video_type, e)
+            ToolModule.tool_log_info(level='error', message=log)
+            print(log)
             os._exit(-1)
         else:
             # res = urllib.request.Request(url, headers=self.get_random_headers())
