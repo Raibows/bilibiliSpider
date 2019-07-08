@@ -5,6 +5,7 @@
     - 2019/7/4 fix program not working bug for getting a not existed or deleted video info
     - 2019/7/5 add proxy function
     - 2019/7/6 add error logging module
+    - 2019/7/8 bug fix and add MachineLearning Perceptron Module
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
@@ -31,4 +32,11 @@
 3.2019/7/6<br>
     It's necessary to add error logging module for analysis.
     We need to delete these videos that could't get length or upload time through speical
-    flag in data processing. 
+    flag in data processing. <br>
+4.2019/7/8<br>
+    Holy shit! I forgot to get video's points info! Fuck it. So I have to do it again now.
+    To figure out how did the website calculate the video points from some indexes, assume it a 
+    multiple linear regression model is a good choice. Perceptron is a
+    a easy enough but nice classifier to solve linear problem.<br>
+    Well, the spider now is steady after I used proxy module and add try-catch to almost every 
+    procedure that may make errors.

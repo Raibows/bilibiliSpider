@@ -170,7 +170,7 @@ class bilibili_spider():
         :return: list, ['video_rank', 'video_aid', 'video_title', 'up_mid']
         '''
         info = []
-        info.append(['0rank_type', '1video_type', '2video_rank', '3video_aid', '4video_title', '5up_mid'])
+        info.append(['0rank_type', '1video_type', '2video_rank', '3video_aid', '4video_title', '5up_mid', '6points'])
 
         suffix = self.rank_time_category.get(rank_time_type)
         try:
@@ -195,7 +195,6 @@ class bilibili_spider():
                                        target= '_blank',
                                        href=re.compile('//space.bilibili.com/'))
 
-
             # print(titles)
             # os._exit(-1)
 
@@ -209,7 +208,10 @@ class bilibili_spider():
                 title = re.findall(r'>[\S\s]+<', str(titles[i]))
                 title = title[0][1:-1]
 
-                info.append([rank_type, video_type, i+1, aid, title, up_mid])
+                point = re.findall(r'\d+', str(points[i]))
+                point = point[0]
+
+                info.append([rank_type, video_type, i+1, aid, title, up_mid, point])
             return info
 
     def get_rid_category(self, port_begin=2, port_end=200):
@@ -241,42 +243,11 @@ class bilibili_spider():
         return info
 
 
-# def get_proxy():
-#     return requests.get("http://39.97.50.177:5010/get/").content
-#
-# def delete_proxy(proxy):
-#     requests.get("http://39.97.50.177:5010/delete/?proxy={}".format(proxy))
-#
-# # your spider code
-#
-# def getHtml(url):
-#     # ....
-#     retry_count = 5
-#     proxy = get_proxy()
-#     proxy = '118.230.232.233:8080'
-#     while retry_count > 0:
-#         try:
-#             html = requests.get(url, proxies={"http": "http://{}".format(proxy)})
-#             # 使用代理访问
-#             return html
-#         except Exception:
-#             retry_count -= 1
-#     # 出错5次, 删除代理池中代理
-#     delete_proxy(proxy)
-#     return None
-
-
-
-
-
-
-
-
 
 
 # test_aid = 57721760
 # test_aid = 55406216
-# test = bilibili_spider()
+test = bilibili_spider()
 # x = test.get_video_upload_time_info(57649778)
 # # x = test.get_raw_video_info(19308734)
 # # x = test.get_raw_video_info(19308734)
@@ -290,3 +261,4 @@ class bilibili_spider():
 # res = requests.get(url=test. .format(57721760), proxies={"http": "http://{}".format(proxy)})
 #
 # print(res.text)
+test.get_rank_video_info(video_type='game')

@@ -1,8 +1,8 @@
 '''
 a module for processing json raw info to serialize info
 '''
-import time
 from bilibiliSpider import SpiderModule
+from bilibiliSpider import ToolModule
 
 default_spider = SpiderModule.bilibili_spider()
 
@@ -22,7 +22,9 @@ def process_raw_video_info(aid, spider=default_spider):
             }
                 }
     except Exception as e:
-        print('{} {}'.format(e, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
+        log = 'ERROR IN process raw video info aid {} {}'.format(aid, e)
+        ToolModule.tool_log_info(level='error', message=log)
+        print(log)
         raw = {'code': 0, 'message': '0', 'ttl': 1, 'data': {
             'aid': aid, 'view': -1, 'danmaku': -1, 'reply': -1, 'favorite': -1, 'coin': -1, 'share': -1, 'like': -1, 'now_rank': -1, 'his_rank': -1, 'no_reprint': -1, 'copyright': -1, 'argue_msg': '-1'
             }
@@ -44,7 +46,9 @@ def process_raw_user_info(mid, spider=default_spider):
     try:
         raw = spider.get_raw_user_info(mid)
     except Exception as e:
-        print('{} {}'.format(e, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())))
+        log = 'ERROR IN GET RAW USER INFO mid{} {}'.format(mid, e)
+        ToolModule.tool_log_info(level='error', message=log)
+        print(log)
         raw = {
             'data' : {
                 'following' : -1,
