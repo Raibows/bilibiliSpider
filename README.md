@@ -6,6 +6,7 @@
     - 2019/7/5 add proxy function
     - 2019/7/6 add error logging module
     - 2019/7/8 bug fix and add MachineLearning Perceptron Module
+    - 2019/7/9 perfect perceptron module and optimize code design 
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
@@ -39,4 +40,14 @@
     multiple linear regression model is a good choice. Perceptron is a
     a easy enough but nice classifier to solve linear problem.<br>
     Well, the spider now is steady after I used proxy module and add try-catch to almost every 
-    procedure that may make errors.
+    procedure that may make errors.<br>
+5.2019/7/9<br>
+    A 8-element linear function could be fit with 1000 test data in no more than 20 iterations by
+    perceptron. But it can't fit bilibili data. I think there are at least three possible reasons
+    caused that:<br>
+    1. they are nonlinear<br>
+    2. some data need to clean<br>
+    3. missing some features or too much features<br>
+    Whatever, I choose to analyse the data first.
+        
+        

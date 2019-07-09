@@ -16,3 +16,9 @@ def tool_log_info(level='info', message='NOTHING'):
     with open(logging_path, 'a+', encoding='utf-8', newline='') as file:
         file.write(line+'\n')
 
+def tool_count_time(func):
+    def wrapper(*args, **kwargs):
+        time1 = time.clock()
+        func(*args, **kwargs)
+        print(func.__name__, 'costs', time.clock() - time1, 'seconds')
+    return wrapper
