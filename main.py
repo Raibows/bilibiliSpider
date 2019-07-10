@@ -5,7 +5,7 @@ from bilibiliSpider import MasModule
 from bilibiliSpider import ToolModule
 
 default_spider = SpiderModule.bilibili_spider()
-default_spider.mas_proxy_flag = True
+default_spider.mas_proxy_flag = False
 
 #make your own rule to collect info
 def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank_type='origin'):
@@ -54,7 +54,7 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
             video_info[18] = ToolModule.tool_get_current_time()
 
             count += 1
-            log = '{} now, got aid {}'.format(count, video_aid)
+            log = '{} now, got aid {}, failed {} videos'.format(count, video_aid, spider.get_error_count())
             print(log)
             ToolModule.tool_log_info(level='info', message=log)
             info.append(video_info)
@@ -62,7 +62,7 @@ def export_to_csv(spider=default_spider, csv_path='bilibili_rank_data.csv', rank
     with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(info)
-        log = 'done !'
+        log = f'done ! spider {count} videos failed in {spider.get_error_count()} videos'
         print(log)
         ToolModule.tool_log_info(level='info', message=log)
 

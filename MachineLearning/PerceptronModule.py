@@ -2,7 +2,6 @@ import os
 from bilibiliSpider import ToolModule
 
 
-
 def universal_activator(predict, expect):
     ratio = predict / expect
     return 1 if ratio == 1 else ratio
@@ -35,7 +34,7 @@ class perceptron():
         if activator == None:
             self.__activator = universal_activator
         else:
-            self.activator = activator
+            self.__activator = activator
         self.__weights = [0.0 for _ in variables] #weights init
         self.__bias = 0.0 #offset init
         self.__train_vecs = train_vecs

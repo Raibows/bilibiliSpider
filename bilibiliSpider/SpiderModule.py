@@ -58,7 +58,7 @@ class bilibili_spider():
             'entertainment' : [71, 137, 131],
             'movie' : [182, 183, 184, 85]
          }
-
+        self.__error = []
 
     def __get_html_requests(self, url):
         if self.mas_proxy_flag:
@@ -73,6 +73,13 @@ class bilibili_spider():
             return html
         else:
             return requests.get(url, headers=self.get_random_headers())
+
+    def __log_error(self, aid):
+        if aid not in self.__error:
+            self.__error.append(aid)
+
+    def get_error_count(self):
+        return len(self.__error)
 
     def get_random_headers(self, browser='Chrome'):
         '''
@@ -112,6 +119,7 @@ class bilibili_spider():
         res = res.text
         error_flag = '<div class="error-text">啊叻？视频不见了？</div>'
         if error_flag in res:
+            self.__log_error(aid)
             return -1
         try:
             video_time = re.findall(r'\"timelength\":\d+', res)[0]
@@ -143,6 +151,7 @@ class bilibili_spider():
         if error_flag in res:
             log = 'ERROR in getting video upload time {} {}'.format(aid, error_flag)
             ToolModule.tool_log_info(level='error', message=log)
+            self.__log_error(aid)
             return -1
         try:
             upload_time = re.findall(r'\"uploadDate\" content=\"\d+-\d+-\d+\s+\d+:\d+:\d+\">', res)[0]
