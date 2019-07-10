@@ -7,6 +7,7 @@
     - 2019/7/6 add error logging module
     - 2019/7/8 bug fix and add MachineLearning Perceptron Module
     - 2019/7/9 perfect perceptron module and optimize code design 
+    - 2019/7/10 fixed perceptron module bug, add failure statistics
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
