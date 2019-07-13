@@ -8,6 +8,7 @@
     - 2019/7/8 bug fix and add MachineLearning Perceptron Module
     - 2019/7/9 perfect perceptron module and optimize code design 
     - 2019/7/10 fixed perceptron module bug, add failure statistics
+    - 2019/7/13 formally add multiple processes to support
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
@@ -49,6 +50,19 @@
     1. they are nonlinear<br>
     2. some data need to clean<br>
     3. missing some features or too much features<br>
-    Whatever, I choose to analyse the data first.
+    Whatever, I choose to analyse the data first.<br>
+6.2019/7/13<br>
+    I finally choose to use *multiple processes* to accelerate spider procedure after days of 
+    trying. At first I want to use *threads*, but threads is dead in python because of 
+    GIL. Today I tried *coroutines*, but it will take many changes if I use it. And *multiple processes*
+    is very easy to apply to my original program framework.<br>
+    Through testing the whole bilibili ranking(about 1300 info), the spider result are below<br>
+    - single process: about 14 minutes
+    - multiple processes: about 5 minutes<br>
+    It improved at least a half compared with single process.
+    
+    
+    
+    
         
         

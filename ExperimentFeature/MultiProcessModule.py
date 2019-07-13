@@ -1,9 +1,15 @@
-from bilibiliSpider import SpiderModule
 import multiprocessing as mp
 import time
 import threading
 import queue as q
+import csv
+from bilibiliSpider import SpiderModule
+from bilibiliSpider import ProcessRawModule
+from bilibiliSpider import MasModule
+from bilibiliSpider import ToolModule
 
+default_spider = SpiderModule.bilibili_spider()
+default_spider.mas_proxy_flag = False
 
 
 
@@ -13,6 +19,14 @@ def count_time(func):
         func(*args, **kwargs)
         print(func.__name__, time.clock() - time1)
     return wrapper
+
+
+
+
+
+
+
+
 
 
 def job(rank_type, video_type, lock=None):

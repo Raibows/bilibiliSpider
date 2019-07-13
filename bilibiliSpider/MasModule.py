@@ -8,6 +8,7 @@ from fake_headers import Headers
 import socket
 from bilibiliSpider import ToolModule
 
+
 headers= Headers(browser='Chrome')
 
 #set your own proxy pool address, default is localhost port 5010
@@ -32,7 +33,7 @@ def mas_get_html(url):
     while retry_count > 0:
         try:
             # print('hhh')
-            html = requests.get(url, headers=headers.generate(),
+            html =  requests.get(url, headers=headers.generate(),
                                 proxies={"http": "http://{}".format(proxy)})
             if html == None:
                 time.sleep(1)
@@ -64,6 +65,11 @@ def mas_get_host_ip():
     return ip
 
 
+
+
+
+if __name__ == '__main__':
+    pass
 
 # print(mas_get_proxy())
 #

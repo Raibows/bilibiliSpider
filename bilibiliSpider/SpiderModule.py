@@ -8,9 +8,6 @@ import time
 from bilibiliSpider import MasModule
 from bilibiliSpider import ToolModule
 
-
-
-
 class bilibili_spider():
     def __init__(self):
         self.api_video_info = 'https://api.bilibili.com/x/web-interface/archive/stat?aid={}' #video aid
@@ -73,7 +70,6 @@ class bilibili_spider():
             return html
         else:
             return requests.get(url, headers=self.get_random_headers())
-
     def __log_error(self, aid):
         if aid not in self.__error:
             self.__error.append(aid)

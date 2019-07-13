@@ -103,8 +103,15 @@
       <change afterPath="$PROJECT_DIR$/../testforflasksql/venv/pyvenv.cfg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../untitled" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExperimentFeature/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ExperimentFeature/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bilibiliSpider/MasModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/MasModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bilibiliSpider/ToolModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/ToolModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bilibiliSpider/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,7 +121,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bilibiliSpider/Config.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ExperimentFeature/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="320">
+                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -125,11 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>综艺</find>
-      <find>短片</find>
-      <find>24</find>
-      <find>资讯</find>
-      <find>31</find>
       <find>29</find>
       <find>30</find>
       <find>28</find>
@@ -155,6 +175,11 @@
       <find>_perceptron__activator</find>
       <find>error</find>
       <find>process</find>
+      <find>await</find>
+      <find>get_rank_video_info</find>
+      <find>后妈们的抱怨</find>
+      <find>video_type</find>
+      <find>mas</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,30 +202,34 @@
         <option value="$PROJECT_DIR$/SpiderModule.py" />
         <option value="$PROJECT_DIR$/spider.sh" />
         <option value="$PROJECT_DIR$/ExperimentFeature/test_process.py" />
-        <option value="$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py" />
-        <option value="$PROJECT_DIR$/ExperimentFeature/README.md" />
         <option value="$PROJECT_DIR$/biblibiliSpider/SpiderModule.py" />
         <option value="$PROJECT_DIR$/biblibiliSpider/ProcessRawModule.py" />
-        <option value="$PROJECT_DIR$/bilibili_rank_data.csv" />
-        <option value="$PROJECT_DIR$/bilibiliSpider/MasModule.py" />
-        <option value="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" />
-        <option value="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" />
         <option value="$PROJECT_DIR$/MachineLearning/FakedataModule.py" />
         <option value="$PROJECT_DIR$/MachineLearning/NormalizeModule.py" />
         <option value="$PROJECT_DIR$/MachineLearning/run.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" />
         <option value="$PROJECT_DIR$/bilibiliSpider/__init__.py" />
+        <option value="$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py" />
+        <option value="$PROJECT_DIR$/ExperimentFeature/test1.csv" />
+        <option value="$PROJECT_DIR$/bilibiliSpider/MasModule.py" />
+        <option value="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" />
+        <option value="$PROJECT_DIR$/bilibiliSpider/logging.txt" />
         <option value="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" />
-        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/bilibili_rank_data.csv" />
         <option value="$PROJECT_DIR$/bilibiliSpider/ToolModule.py" />
+        <option value="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" />
+        <option value="$PROJECT_DIR$/logging.txt" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/bilibiliSpider/Config.py" />
+        <option value="$PROJECT_DIR$/ExperimentFeature/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="903" />
+    <option name="width" value="1024" />
     <option name="height" value="1167" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -209,6 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,11 +246,20 @@
               <item name="bilibilivideohot" type="b2602c69:ProjectViewProjectNode" />
               <item name="bilibilivideohot" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bilibilivideohot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bilibilivideohot" type="462c0819:PsiDirectoryNode" />
+              <item name="bilibiliSpider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bilibilivideohot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bilibilivideohot" type="462c0819:PsiDirectoryNode" />
+              <item name="ExperimentFeature" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,7 +270,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../microblog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -257,7 +296,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="NormalizeModule" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Coroutines" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bilibilivideohot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -265,12 +304,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachineLearning" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExperimentFeature" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachineLearning/NormalizeModule.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -279,29 +318,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="PerceptronModule" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="bilibilivideohot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachineLearning" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="SpiderModule (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="MasModule" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bilibilivideohot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -314,7 +331,51 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bilibiliSpider/MasModule.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ProcessRawModule" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bilibilivideohot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bilibiliSpider" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ToolModule" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bilibilivideohot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bilibiliSpider" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bilibiliSpider/ToolModule.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -367,43 +428,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="bilibilivideohot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachineLearning" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachineLearning/run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.SpiderModule (1)" />
-      <item itemvalue="Python.PerceptronModule" />
-      <item itemvalue="Python.NormalizeModule" />
-      <item itemvalue="Python.run" />
+      <item itemvalue="Python.Coroutines" />
+      <item itemvalue="Python.MasModule" />
+      <item itemvalue="Python.ProcessRawModule" />
+      <item itemvalue="Python.ToolModule" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.PerceptronModule" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.NormalizeModule" />
-        <item itemvalue="Python.SpiderModule (1)" />
+        <item itemvalue="Python.ToolModule" />
+        <item itemvalue="Python.ProcessRawModule" />
+        <item itemvalue="Python.Coroutines" />
+        <item itemvalue="Python.MasModule" />
       </list>
     </recent_temporary>
   </component>
@@ -436,12 +475,14 @@
       <workItem from="1562248356412" duration="37403000" />
       <workItem from="1562496870794" duration="20147000" />
       <workItem from="1562574615403" duration="27915000" />
-      <workItem from="1562721543869" duration="4277000" />
+      <workItem from="1562721543869" duration="6690000" />
+      <workItem from="1562894188415" duration="7725000" />
+      <workItem from="1562987350030" duration="13048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181167000" />
+    <option name="totallyTimeSpent" value="204353000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,14 +494,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23318872" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2646421" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39009288" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15479876" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993808" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -474,31 +516,31 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.030911064" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.030911064" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17032968" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2646421" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.63486844" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997396" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3869969" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993808" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32954547" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.058114037" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.33436534" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32920536" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.18988648" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32954547" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32920536" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.030911064" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" id="Database" order="5" />
     </layout-to-restore>
@@ -511,65 +553,24 @@
     <SUITE FILE_PATH="coverage/bilibilivideohot$spider_ranklist.coverage" NAME="spider_ranklist Coverage Results" MODIFIED="1560267773462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$config.coverage" NAME="config Coverage Results" MODIFIED="1561988927155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$testhh.coverage" NAME="testhh Coverage Results" MODIFIED="1560696055911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$MasModule.coverage" NAME="MasModule Coverage Results" MODIFIED="1562307240503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$Coroutines.coverage" NAME="Coroutines Coverage Results" MODIFIED="1562497814119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$MasModule.coverage" NAME="MasModule Coverage Results" MODIFIED="1562991956530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$Coroutines.coverage" NAME="Coroutines Coverage Results" MODIFIED="1562994814481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$test_process.coverage" NAME="test_process Coverage Results" MODIFIED="1561815860272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$ToolModule.coverage" NAME="ToolModule Coverage Results" MODIFIED="1562388022305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$main.coverage" NAME="main Coverage Results" MODIFIED="1562765289102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$ToolModule.coverage" NAME="ToolModule Coverage Results" MODIFIED="1563001046282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$main.coverage" NAME="main Coverage Results" MODIFIED="1563002106256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$other.coverage" NAME="other Coverage Results" MODIFIED="1562036121428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$SpiderModule.coverage" NAME="SpiderModule Coverage Results" MODIFIED="1562037703452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$run.coverage" NAME="run Coverage Results" MODIFIED="1562667659733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$SpiderModule.coverage" NAME="SpiderModule Coverage Results" MODIFIED="1562991810972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$test19_6_6.coverage" NAME="test19-6-6 Coverage Results" MODIFIED="1560228821934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$ProcessRawModule.coverage" NAME="ProcessRawModule Coverage Results" MODIFIED="1562034973812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$ProcessRawModule.coverage" NAME="ProcessRawModule Coverage Results" MODIFIED="1562998580241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$SpiderModule__1_.coverage" NAME="SpiderModule (1) Coverage Results" MODIFIED="1562504615112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$config__1_.coverage" NAME="config (1) Coverage Results" MODIFIED="1561991550246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$MultiProcessModule.coverage" NAME="MultiProcessModule Coverage Results" MODIFIED="1562060971904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$MultiProcessModule.coverage" NAME="MultiProcessModule Coverage Results" MODIFIED="1562984666754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1559832684644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$chrometest.coverage" NAME="chrometest Coverage Results" MODIFIED="1560229295946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$PerceptronModule.coverage" NAME="PerceptronModule Coverage Results" MODIFIED="1562726472271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/urllib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/sessions.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/api.py" />
-    <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/fake_headers/__init__.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/urllib/request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="503" selection-start-line="503" selection-end-line="503" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/586740924/time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="155" column="23" lean-forward="true" selection-start-line="155" selection-start-column="23" selection-end-line="155" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExperimentFeature/chrometest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExperimentFeature/test19-6-6.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bilibili_data.csv" />
     <entry file="file://$PROJECT_DIR$/ExperimentFeature/__init__.py" />
     <entry file="file://$PROJECT_DIR$/ExperimentFeature/test_thread.py">
@@ -586,16 +587,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExperimentFeature/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="384">
-            <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -638,7 +629,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/urllib3/connection.py" />
-    <entry file="file://$PROJECT_DIR$/bilibiliSpider/logging.txt" />
     <entry file="file://$PROJECT_DIR$/test.csv" />
     <entry file="file://$PROJECT_DIR$/spider.sh">
       <provider selected="true" editor-type-id="text-editor">
@@ -647,37 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExperimentFeature/Coroutines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/logging.txt" />
-    <entry file="file://$PROJECT_DIR$/bilibili_rank_data.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="379">
-          <caret line="2602" column="33" selection-start-line="2602" selection-start-column="26" selection-end-line="2602" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#146#304#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-681699660/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -716,16 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="310">
-            <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MachineLearning/FakedataModule.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1179">
@@ -743,69 +693,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bilibiliSpider/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/MachineLearning/PerceptronModule.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logging.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="5600" column="11" selection-start-line="5600" selection-start-column="11" selection-end-line="5600" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-          <folding>
-            <element signature="e#253#1479#0" />
-            <element signature="e#1541#2163#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bilibiliSpider/MasModule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-          <folding>
-            <element signature="e#28#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bilibiliSpider/SpiderModule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#230#9157#0" />
-            <element signature="e#828#1214#0" />
-            <element signature="e#1244#1314#0" />
-            <element signature="e#1349#1486#0" />
-            <element signature="e#1521#2115#0" />
-            <element signature="e#2166#2631#0" />
-            <element signature="e#2702#2763#0" />
-            <element signature="e#2811#2823#0" />
-            <element signature="e#2693#2836#0" />
-            <element signature="e#2885#3121#0" />
-            <element signature="e#3169#3402#0" />
-            <element signature="e#3454#4196#0" />
-            <element signature="e#4253#5574#0" />
-            <element signature="e#5639#5895#0" />
-            <element signature="e#6000#8157#0" />
-            <element signature="e#8227#9157#0" />
           </folding>
         </state>
       </provider>
@@ -820,17 +713,216 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logging1.txt" />
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/test1.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/testall">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2796" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/testdance.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/testall.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-996">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/test.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="288">
+          <caret line="189" column="17" selection-start-line="189" selection-start-column="17" selection-end-line="189" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/MasModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#28#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/testmovie.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="496">
+          <caret line="94" column="41" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/logging.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/bilibili_rank_data_all.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/bilibili_rank_data_dance.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/bilibili_rank_data_digital.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/bilibili_rank_data_fashion.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/bilibili_rank_data_animation.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/Coroutines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="124" column="21" lean-forward="true" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/logging.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2418">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibili_rank_data.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="203">
+          <caret line="7805" column="9" lean-forward="true" selection-start-line="7805" selection-start-column="9" selection-end-line="7805" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/output.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-7317">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bilibiliSpider/ToolModule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state relative-caret-position="640">
+          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/SpiderModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#236#9426#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/logging7-2-7-7.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-91141" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="252" lean-forward="true" selection-start-line="252" selection-end-line="252" />
+          <folding>
+            <element signature="e#64#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logging.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="8243" column="71" selection-start-line="8243" selection-start-column="71" selection-end-line="8243" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-992">
-          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+        <state relative-caret-position="128">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1984">
+            <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bilibiliSpider/Config.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="320">
+            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
