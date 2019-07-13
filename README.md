@@ -57,7 +57,7 @@
     GIL. Today I tried *coroutines*, but it will take many changes if I use it. And *multiple processes*
     is very easy to apply to my original program framework.<br>
     Through testing the whole bilibili ranking(about 1300 info), the spider result are below<br>
-    - single process: about 14 minutes
+    - single process: about 14 minutes<br>
     - multiple processes: about 5 minutes<br>
     It improved at least a half compared with single process.
     

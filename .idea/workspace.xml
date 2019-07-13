@@ -103,16 +103,8 @@
       <change afterPath="$PROJECT_DIR$/../testforflasksql/venv/pyvenv.cfg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../untitled" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExperimentFeature/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ExperimentFeature/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/MasModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/MasModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/ToolModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/ToolModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bilibiliSpider/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/Config.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,17 +114,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bilibiliSpider/Config.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ExperimentFeature/README.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="320">
-                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <first_editor relative-caret-position="225">
+                <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
               </first_editor>
               <second_editor />
             </state>
@@ -221,9 +208,9 @@
         <option value="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" />
         <option value="$PROJECT_DIR$/logging.txt" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/bilibiliSpider/Config.py" />
         <option value="$PROJECT_DIR$/ExperimentFeature/README.md" />
+        <option value="$PROJECT_DIR$/bilibiliSpider/Config.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -477,12 +464,12 @@
       <workItem from="1562574615403" duration="27915000" />
       <workItem from="1562721543869" duration="6690000" />
       <workItem from="1562894188415" duration="7725000" />
-      <workItem from="1562987350030" duration="13048000" />
+      <workItem from="1562987350030" duration="13326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204353000" />
+    <option name="totallyTimeSpent" value="204631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,12 +484,12 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2646421" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2646421" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15479876" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.15892673" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993808" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -903,24 +890,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/ExperimentFeature/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1984">
-            <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+          <first_editor relative-caret-position="320">
+            <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bilibiliSpider/Config.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExperimentFeature/README.md">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="320">
-            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <first_editor relative-caret-position="225">
+            <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
           </first_editor>
           <second_editor />
         </state>
