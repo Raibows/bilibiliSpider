@@ -7,13 +7,13 @@ import requests
 from fake_headers import Headers
 import socket
 from bilibiliSpider import ToolModule
+from bilibiliSpider import Config
 
 
 headers= Headers(browser='Chrome')
 
 #set your own proxy pool address, default is localhost port 5010
-_ip_proxy_pool_addr = '127.0.0.1:5010'
-# _ip_proxy_pool_addr = '39.97.50.177:5010'
+_ip_proxy_pool_addr = Config.spider_config.mas_proxy_pool_ip
 
 def mas_random_stop(begin=0, end=0.1):
     sleep_time = random.uniform(begin, end)
@@ -33,6 +33,7 @@ def mas_get_html(url):
     while retry_count > 0:
         try:
             # print('hhh')
+            # print('proxy', proxy)
             html =  requests.get(url, headers=headers.generate(),
                                 proxies={"http": "http://{}".format(proxy)})
             if html == None:

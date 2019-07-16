@@ -57,17 +57,9 @@ print(len(data.get('train_exps')))
 train_vecs = data.get('train_vecs')
 train_exps = data.get('train_exps')
 
-big = 100000
-
-for vec in train_vecs:
-    for i in range(len(vec)):
-        vec[i] = vec[i] / big
-
-for i in range(len(train_exps)):
-    train_exps[i] = train_exps[i] / big
 
 
-print(train_vecs)
+NormalizeModule.normalize_min_max(train_vecs, train_exps)
 
 
 model = PerceptronModule.perceptron(

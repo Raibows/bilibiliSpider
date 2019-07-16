@@ -9,6 +9,7 @@
     - 2019/7/9 perfect perceptron module and optimize code design 
     - 2019/7/10 fixed perceptron module bug, add failure statistics
     - 2019/7/13 formally add multiple processes to support
+    - 2019/7/16 configuration supported
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update

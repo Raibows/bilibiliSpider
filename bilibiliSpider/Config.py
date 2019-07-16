@@ -3,8 +3,6 @@
 
 
 
-
-
 class spider_config():
     current_path = None
     logging_path = _logging_path
@@ -26,3 +24,4 @@ class spider_config():
         'movie'
     ]
     multi_processor_flag = _multi_processor_flag
+    mas_proxy_pool_ip = _ip_proxy_pool_addr

@@ -3,6 +3,8 @@ from bilibiliSpider import ToolModule
 
 
 def universal_activator(predict, expect):
+    if expect == 0:
+        return 9
     ratio = predict / expect
     return 1 if ratio == 1 else ratio
 
@@ -173,17 +175,23 @@ class perceptron():
 if __name__ == '__main__':
 
     from MachineLearning import FakedataModule
-
+    from MachineLearning import NormalizeModule
 
     variables = [0.3, 1, 2.1, 0.66, 0.841, 0.247, 1.6, 7.1]
-    example = FakedataModule.fake_data(variables=variables, data_size=1000, error_data_ratio=0.01)
+    example = FakedataModule.fake_data(variables=variables, data_size=1000, error_data_ratio=0)
     data = example.get_test_data()
+
+    test_vecs = data.get('test_vecs')
+    test_exps = data.get('test_exps')
+
+    # NormalizeModule.normalize_min_max(test_vecs, test_exps)
+
 
     model = perceptron(
         activator=universal_activator,
         variables=example.get_variables(),
-        train_vecs=data.get('test_vecs'),
-        train_exps=data.get('test_exps'),
+        train_vecs=test_vecs,
+        train_exps=test_exps,
     )
 
 

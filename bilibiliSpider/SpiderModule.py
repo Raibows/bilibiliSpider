@@ -7,6 +7,7 @@ import re
 import time
 from bilibiliSpider import MasModule
 from bilibiliSpider import ToolModule
+from bilibiliSpider import Config
 
 class bilibili_spider():
     def __init__(self):
@@ -63,10 +64,11 @@ class bilibili_spider():
             html = MasModule.mas_get_html(url)
             while html == None:
                 try_count += 1
-                if try_count == 2:
-                    return requests.get(url, headers=self.get_random_headers())
+                if try_count == 3:
+                    html = requests.get(url, headers=self.get_random_headers())
+                else:
+                    html = MasModule.mas_get_html(url)
                 time.sleep(1)
-                html = MasModule.mas_get_html(url)
             return html
         else:
             return requests.get(url, headers=self.get_random_headers())
@@ -92,6 +94,14 @@ class bilibili_spider():
         '''
         url = self.api_video_info.format(aid)
         res = self.__get_html_requests(url)
+        try_412 = 0
+        while res.status_code == 412:
+            if try_412 == 3:
+                break
+            else:
+                try_412 += 1
+                res = self.__get_html_requests(url)
+                time.sleep(1)
         res_dict = res.json()
         return res_dict
 
@@ -266,4 +276,8 @@ test = bilibili_spider()
 # res = requests.get(url=test. .format(57721760), proxies={"http": "http://{}".format(proxy)})
 #
 # print(res.text)
-test.get_rank_video_info(video_type='game')
+# a = test.get_raw_video_info(59037693)
+# print(a)
+# test.mas_proxy_flag = Config.spider_config.mas_proxy_flag
+# a = test._get_html_requests(r'https://api.bilibili.com/x/web-interface/archive/stat?aid=59037693')
+# print(a.json())
