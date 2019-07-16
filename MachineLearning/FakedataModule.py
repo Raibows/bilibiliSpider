@@ -33,6 +33,7 @@ class fake_data():
             else:
                 self.__test_vecs.append(temp)
                 self.__test_exps.append(sum)
+                # print(i)
         for i in range(self.__error_data_size):
             error_index = random.randint(0, self.__error_data_size)
             if error_index in self.__error_data:

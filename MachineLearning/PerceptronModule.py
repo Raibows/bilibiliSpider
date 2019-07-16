@@ -178,14 +178,14 @@ if __name__ == '__main__':
     from MachineLearning import NormalizeModule
 
     variables = [0.3, 1, 2.1, 0.66, 0.841, 0.247, 1.6, 7.1]
-    example = FakedataModule.fake_data(variables=variables, data_size=1000, error_data_ratio=0)
+    example = FakedataModule.fake_data(variables=variables, data_size=1000, error_data_ratio=0.001)
     data = example.get_test_data()
 
     test_vecs = data.get('test_vecs')
     test_exps = data.get('test_exps')
 
     # NormalizeModule.normalize_min_max(test_vecs, test_exps)
-
+    NormalizeModule.normalize_median(test_vecs, test_exps)
 
     model = perceptron(
         activator=universal_activator,

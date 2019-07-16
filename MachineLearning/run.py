@@ -59,7 +59,7 @@ train_exps = data.get('train_exps')
 
 
 
-NormalizeModule.normalize_min_max(train_vecs, train_exps)
+NormalizeModule.normalize_median(train_vecs, train_exps)
 
 
 model = PerceptronModule.perceptron(
