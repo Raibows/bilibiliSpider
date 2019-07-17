@@ -10,6 +10,7 @@
     - 2019/7/10 fixed perceptron module bug, add failure statistics
     - 2019/7/13 formally add multiple processes to support
     - 2019/7/16 configuration supported
+    - 2019/7/17 add generator function for fakedata module
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update

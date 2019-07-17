@@ -85,7 +85,7 @@ class perceptron():
     def train(self, train_iter_num=1000, rate=0.01, stop_variance=1e-5):
         '''
         :param train_iter_num: max train iteration num
-        :param rate: train rate, the larger the rate, the more accurate the
+        :param rate: train rate, the smaller the rate, the more accurate the
         predict weights, and the slower the training
         :param stop_variance: stop variance flag, if training result less than
         stop variance flag, the training will end immediately
@@ -178,7 +178,7 @@ if __name__ == '__main__':
     from MachineLearning import NormalizeModule
 
     variables = [0.3, 1, 2.1, 0.66, 0.841, 0.247, 1.6, 7.1]
-    example = FakedataModule.fake_data(variables=variables, data_size=1000, error_data_ratio=0.001)
+    example = FakedataModule.fake_data(variables=variables, data_size=100, error_data_ratio=0, precision=3)
     data = example.get_test_data()
 
     test_vecs = data.get('test_vecs')
@@ -197,7 +197,7 @@ if __name__ == '__main__':
 
     model.train(
         train_iter_num=10000,
-        rate=0.1,
+        rate=0.01,
         stop_variance=1e-10
     )
     print(example)
