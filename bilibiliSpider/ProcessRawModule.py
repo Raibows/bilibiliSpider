@@ -9,12 +9,14 @@ import csv
 import multiprocessing
 from multiprocessing import Pool
 import os
+import time
 
 default_spider = SpiderModule.bilibili_spider()
 default_output_path = Config.spider_config.output_path
 default_spider.mas_proxy_flag = Config.spider_config.mas_proxy_flag
 default_tasks = Config.spider_config.tasks
 default_multi_processor_flag = Config.spider_config.multi_processor_flag
+default_multi_processor_num = Config.spider_config.multi_processor_num
 
 
 
@@ -168,7 +170,8 @@ def process_multi_tasks(tasks=default_tasks, output_path=default_output_path):
     :param tasks: video categories like ['guochuang', 'movie']
     :return:
     '''
-    max_cpu_count = multiprocessing.cpu_count()
+    # max_cpu_count = multiprocessing.cpu_count()
+    max_cpu_count = default_multi_processor_num
     if max_cpu_count == None:
         max_cpu_count = 1
     p = Pool(max_cpu_count)
@@ -246,6 +249,9 @@ def process_single_tasks(spider=default_spider, csv_path=default_output_path, ra
 
 
 def process_run_main(multi_processor_flag=default_multi_processor_flag):
+    print(Config.spider_config)
+    print('spider will start in {} seconds ...'.format(10))
+    time.sleep(10)
     if multi_processor_flag:
         process_multi_tasks()
     else:

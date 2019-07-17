@@ -1,16 +1,28 @@
 ## Update Record
-    - 2019/6/12 finish spider module, now could get original data from bilibili
-    - 2019/7/2 refactoring almost everything
-    - 2019/7/4 perfect try and catch
-    - 2019/7/4 fix program not working bug for getting a not existed or deleted video info
-    - 2019/7/5 add proxy function
-    - 2019/7/6 add error logging module
-    - 2019/7/8 bug fix and add MachineLearning Perceptron Module
-    - 2019/7/9 perfect perceptron module and optimize code design 
-    - 2019/7/10 fixed perceptron module bug, add failure statistics
-    - 2019/7/13 formally add multiple processes to support
-    - 2019/7/16 configuration supported
-    - 2019/7/17 add generator function for fakedata module
+    - 2019/6/12 
+        finish spider module, now could get original data from bilibili
+    - 2019/7/2
+        refactoring almost everything
+    - 2019/7/4
+        perfect try and catch
+        fix program not working bug for getting a not existed or deleted video info
+    - 2019/7/5 
+        add proxy function
+    - 2019/7/6 
+        add error logging module
+    - 2019/7/8 
+        bug fix and add MachineLearning Perceptron Module
+    - 2019/7/9 
+        perfect perceptron module and optimize code design 
+    - 2019/7/10 
+        fixed perceptron module bug, add failure statistics
+    - 2019/7/13 
+        formally support multiple processes 
+    - 2019/7/16 
+        configuration supported
+    - 2019/7/17 
+        add generator function for fakedata module
+        add proxy_pool module, not ready for using
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
@@ -61,7 +73,11 @@
     Through testing the whole bilibili ranking(about 1300 info), the spider result are below<br>
     - single process: about 14 minutes<br>
     - multiple processes: about 5 minutes<br>
-    It improved at least a half compared with single process.
+    It improved at least a half compared with single process.<br>
+7.2019/7/17<br>
+    Nowadays, I'm doing some mathematic foundation for building a fully connected network with perceptron. It's easy on theory but hard on practice.<br>
+    And today's later update has added a test module, *proxy pool module*. I borrowed from some others' proxy_pool. The biggest problem for this module is the spider efficiency is too low. *Multiple process*, *thread*, and *coroutines* are all need for better peroformance. Can't avoid using
+    them.
     
     
     
