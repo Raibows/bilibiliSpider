@@ -1,12 +1,6 @@
 import multiprocessing as mp
 import time
-import threading
-import queue as q
-import csv
 from bilibiliSpider import SpiderModule
-from bilibiliSpider import ProcessRawModule
-from bilibiliSpider import MasModule
-from bilibiliSpider import ToolModule
 
 default_spider = SpiderModule.bilibili_spider()
 default_spider.mas_proxy_flag = False

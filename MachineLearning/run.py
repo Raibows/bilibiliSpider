@@ -1,5 +1,4 @@
-from MachineLearning import PerceptronModule
-from MachineLearning import NormalizeModule
+import MachineLearning
 import csv
 
 
@@ -42,33 +41,34 @@ def divide_data(input_data, input_exp):
     }
 
 
+if __name__ == '__main__':
 
-csv_path = r'bilibili_data.csv'
+    csv_path = r'../data/bilibili_data.csv'
 
-data = read_data(csv_path)
+    data = read_data(csv_path)
 
-data = divide_data(data[0], data[1])
+    data = divide_data(data[0], data[1])
 
-variables = ['danmu', 'reply', 'favorite', 'coin', 'share', 'like']
+    variables = ['danmu', 'reply', 'favorite', 'coin', 'share', 'like']
 
-print(len(data.get('train_vecs')))
-print(len(data.get('train_exps')))
+    print(len(data.get('train_vecs')))
+    print(len(data.get('train_exps')))
 
-train_vecs = data.get('train_vecs')
-train_exps = data.get('train_exps')
-
-
-
-NormalizeModule.normalize_median(train_vecs, train_exps)
+    train_vecs = data.get('train_vecs')
+    train_exps = data.get('train_exps')
 
 
-model = PerceptronModule.perceptron(
-    variables=variables,
-    train_vecs=train_vecs,
-    train_exps=train_exps
-)
 
-model.train(
-    train_iter_num=10000,
-    rate=0.01
-)
+    MachineLearning.normalize_median(train_vecs, train_exps)
+
+
+    model = MachineLearning.perceptron(
+        variables=variables,
+        train_vecs=train_vecs,
+        train_exps=train_exps
+    )
+
+    model.train(
+        train_iter_num=10000,
+        rate=0.01
+    )

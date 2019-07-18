@@ -18,16 +18,15 @@ class proxy_pool():
         self.__timer = threading.Timer(1, self.__timer_check)
         self.__timer.start()
 
-    def __get_html(self):
+    def __first_get_html(self):
         html_lib = []
-        for url in self.__proxy_urls:
-            for _i in range(1, 5):
-                page_url = url.format(_i)
-                print(page_url)
-                html = requests.get(page_url, timeout=3)
-                if html.status_code == 200:
-                    html_lib.append(html.text)
-                    time.sleep(1)
+        for _i in range(1, 5):
+            page_url = self.__proxy_urls[0].format(_i)
+            print(page_url)
+            html = requests.get(page_url, timeout=3)
+            if html.status_code == 200:
+                html_lib.append(html.text)
+                time.sleep(1)
 
         self.__html_lib = html_lib
 

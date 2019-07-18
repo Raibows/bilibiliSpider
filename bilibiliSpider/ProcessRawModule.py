@@ -1,22 +1,20 @@
 '''
 a module for processing json raw info to serialize info
 '''
-from bilibiliSpider import SpiderModule
-from bilibiliSpider import ToolModule
-from bilibiliSpider import MasModule
-from bilibiliSpider import Config
+import bilibiliSpider
+import ToolBox
+from Config import spider_config
 import csv
-import multiprocessing
 from multiprocessing import Pool
 import os
 import time
 
-default_spider = SpiderModule.bilibili_spider()
-default_output_path = Config.spider_config.output_path
-default_spider.mas_proxy_flag = Config.spider_config.mas_proxy_flag
-default_tasks = Config.spider_config.tasks
-default_multi_processor_flag = Config.spider_config.multi_processor_flag
-default_multi_processor_num = Config.spider_config.multi_processor_num
+default_spider = bilibiliSpider.bilibili_spider()
+default_output_path = spider_config.output_path
+default_spider.mas_proxy_flag = spider_config.mas_proxy_flag
+default_tasks = spider_config.tasks
+default_multi_processor_flag = spider_config.multi_processor_flag
+default_multi_processor_num = spider_config.multi_processor_num
 
 
 
@@ -37,7 +35,7 @@ def process_raw_video_info(aid, spider=default_spider):
                 }
     except Exception as e:
         log = 'ERROR IN process raw video info aid {} {}'.format(aid, e)
-        ToolModule.tool_log_info(level='error', message=log)
+        ToolBox.tool_log_info(level='error', message=log)
         print(log)
         raw = {'code': 0, 'message': '0', 'ttl': 1, 'data': {
             'aid': aid, 'view': -1, 'danmaku': -1, 'reply': -1, 'favorite': -1, 'coin': -1, 'share': -1, 'like': -1, 'now_rank': -1, 'his_rank': -1, 'no_reprint': -1, 'copyright': -1, 'argue_msg': '-1'
@@ -61,7 +59,7 @@ def process_raw_user_info(mid, spider=default_spider):
         raw = spider.get_raw_user_info(mid)
     except Exception as e:
         log = 'ERROR IN GET RAW USER INFO mid{} {}'.format(mid, e)
-        ToolModule.tool_log_info(level='error', message=log)
+        ToolBox.tool_log_info(level='error', message=log)
         print(log)
         raw = {
             'data' : {
@@ -88,11 +86,11 @@ def process_one_task(video_category, spider=default_spider, rank_type='origin'):
             ]
     # info.append(head)
     count = 0
-    MasModule.mas_random_stop()
+    ToolBox.tool_stop_random_time(max_time=0.5)
     videos = spider.get_rank_video_info(rank_type=rank_type, video_type=video_category)[1:]
     log = 'getting {} {}'.format(rank_type, video_category)
     print(log)
-    ToolModule.tool_log_info(level='info', message=log)
+    ToolBox.tool_log_info(level='info', message=log)
     for temp in videos:
         video_info = [i for i in head]
         video_info[0] = temp[0]
@@ -113,15 +111,15 @@ def process_one_task(video_category, spider=default_spider, rank_type='origin'):
         author_info = process_raw_user_info(author_mid)
         video_info[8] = author_info[1]
         video_info[9] = author_info[0]
-        MasModule.mas_random_stop(0.05)
+        ToolBox.tool_stop_random_time(max_time=0.05)
         video_info[10:17] = process_raw_video_info(video_aid)
 
-        video_info[18] = ToolModule.tool_get_current_time()
+        video_info[18] = ToolBox.tool_get_current_time()
 
         count += 1
         log = '{} now, got aid {}, failed {} videos'.format(count, video_aid, spider.get_error_count())
         print(log)
-        ToolModule.tool_log_info(level='info', message=log)
+        ToolBox.tool_log_info(level='info', message=log)
         info.append(video_info)
     csv_path = 'bilibili_rank_data' + f'_{video_category}.csv'
     with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
@@ -129,7 +127,7 @@ def process_one_task(video_category, spider=default_spider, rank_type='origin'):
         writer.writerows(info)
         log = f'done ! spider {count} videos failed in {spider.get_error_count()} videos'
         print(log)
-        ToolModule.tool_log_info(level='info', message=log)
+        ToolBox.tool_log_info(level='info', message=log)
 
 def process_merge_csv(tasks=default_tasks, output_path=default_output_path):
     '''
@@ -163,7 +161,7 @@ def process_merge_csv(tasks=default_tasks, output_path=default_output_path):
 
 
 #make your own rule to collect info
-@ToolModule.tool_count_time
+@ToolBox.tool_count_time
 def process_multi_tasks(tasks=default_tasks, output_path=default_output_path):
     '''
     Multi processors spider
@@ -182,7 +180,7 @@ def process_multi_tasks(tasks=default_tasks, output_path=default_output_path):
     p.join()
     process_merge_csv(tasks, output_path)
     log = f'done ! spider videos failed in {default_spider.get_error_count()} videos'
-    ToolModule.tool_log_info(level='info', message=log)
+    ToolBox.tool_log_info(level='info', message=log)
 
 
 def process_single_tasks(spider=default_spider, csv_path=default_output_path, rank_type='origin'):
@@ -204,11 +202,11 @@ def process_single_tasks(spider=default_spider, csv_path=default_output_path, ra
     info.append(head)
     count = 0
     for video_type in video_category:
-        MasModule.mas_random_stop()
+        ToolBox.tool_stop_random_time(max_time=0.3)
         videos = spider.get_rank_video_info(rank_type=rank_type, video_type=video_type)[1:]
         log = 'getting {} {}'.format(rank_type, video_type)
         print(log)
-        ToolModule.tool_log_info(level='info', message=log)
+        ToolBox.tool_log_info(level='info', message=log)
         for temp in videos:
             video_info = [i for i in head]
             video_info[0] = temp[0]
@@ -229,15 +227,15 @@ def process_single_tasks(spider=default_spider, csv_path=default_output_path, ra
             author_info = process_raw_user_info(author_mid)
             video_info[8] = author_info[1]
             video_info[9] = author_info[0]
-            MasModule.mas_random_stop(0.05)
+            ToolBox.tool_stop_random_time(0.05)
             video_info[10:17] = process_raw_video_info(video_aid)
 
-            video_info[18] = ToolModule.tool_get_current_time()
+            video_info[18] = ToolBox.tool_get_current_time()
 
             count += 1
             log = '{} now, got aid {}, failed {} videos'.format(count, video_aid, spider.get_error_count())
             print(log)
-            ToolModule.tool_log_info(level='info', message=log)
+            ToolBox.tool_log_info(level='info', message=log)
             info.append(video_info)
 
     with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
@@ -245,11 +243,12 @@ def process_single_tasks(spider=default_spider, csv_path=default_output_path, ra
         writer.writerows(info)
         log = f'done ! spider {count} videos failed in {spider.get_error_count()} videos'
         print(log)
-        ToolModule.tool_log_info(level='info', message=log)
+        ToolBox.tool_log_info(level='info', message=log)
 
 
 def process_run_main(multi_processor_flag=default_multi_processor_flag):
-    print(Config.spider_config)
+    info = spider_config.get_config_info()
+    print(info)
     print('spider will start in {} seconds ...'.format(10))
     time.sleep(10)
     if multi_processor_flag:

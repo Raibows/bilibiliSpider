@@ -1,5 +1,5 @@
 import os
-from bilibiliSpider import ToolModule
+import ToolBox
 
 
 def universal_activator(predict, expect):
@@ -81,7 +81,7 @@ class perceptron():
         sum_result = sum(multi_result) #sum xi * wi
         return self.__activator(sum_result, input_exp)
 
-    @ToolModule.tool_count_time
+    @ToolBox.tool_count_time
     def train(self, train_iter_num=1000, rate=0.01, stop_variance=1e-5):
         '''
         :param train_iter_num: max train iteration num
@@ -174,18 +174,17 @@ class perceptron():
 
 if __name__ == '__main__':
 
-    from MachineLearning import FakedataModule
-    from MachineLearning import NormalizeModule
+    import MachineLearning
 
     variables = [0.3, 1, 2.1, 0.66, 0.841, 0.247, 1.6, 7.1]
-    example = FakedataModule.fake_data(variables=variables, data_size=100, error_data_ratio=0, precision=3)
+    example = MachineLearning.fake_data(variables=variables, data_size=100, error_data_ratio=0, precision=3)
     data = example.get_test_data()
 
     test_vecs = data.get('test_vecs')
     test_exps = data.get('test_exps')
 
     # NormalizeModule.normalize_min_max(test_vecs, test_exps)
-    NormalizeModule.normalize_median(test_vecs, test_exps)
+    MachineLearning.normalize_median(test_vecs, test_exps)
 
     model = perceptron(
         activator=universal_activator,

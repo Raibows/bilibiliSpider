@@ -1,26 +1,10 @@
 import asyncio
 import time
-import os
-import subprocess
 import csv
-from bilibiliSpider import SpiderModule
-from bilibiliSpider import ProcessRawModule
-from bilibiliSpider import MasModule
-from bilibiliSpider import ToolModule
+import bilibiliSpider
+import ToolBox
 import multiprocessing
 from multiprocessing import Pool
-from multiprocessing import Queue
-
-
-
-
-
-
-
-
-
-
-
 
 
 async def say_word(time, word):
@@ -73,7 +57,7 @@ async def main1():
 
 
 
-default_spider = SpiderModule.bilibili_spider()
+default_spider = bilibiliSpider.bilibili_spider()
 default_spider.mas_proxy_flag = False
 
 
@@ -93,7 +77,7 @@ def export_to_csv1(video_category, spider=default_spider, csv_path='bilibili_ran
     info.append(head)
     count = 0
     for video_type in video_category:
-        MasModule.mas_random_stop()
+        ToolBox.tool_stop_random_time(max_time=0.5)
         videos = spider.get_rank_video_info(rank_type=rank_type, video_type=video_type)[1:]
         log = 'getting {} {}'.format(rank_type, video_type)
         print(log)

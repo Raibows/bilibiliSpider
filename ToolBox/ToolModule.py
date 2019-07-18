@@ -1,7 +1,9 @@
 import time
-from bilibiliSpider import Config
+import random
+from Config import toolbox_config
 
-default_logging_path = Config.spider_config.logging_path
+default_logging_path = toolbox_config.logging_path
+
 def tool_get_current_time():
     current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
     return current_time
@@ -22,3 +24,12 @@ def tool_count_time(func):
         func(*args, **kwargs)
         print(func.__name__, 'costs', time.clock() - time1, 'seconds')
     return wrapper
+
+def tool_stop_random_time(min_time=0, max_time=1):
+    random_time = random.uniform(min_time, max_time)
+    time.sleep(random_time)
+
+
+
+if __name__ == '__main__':
+    tool_stop_random_time()

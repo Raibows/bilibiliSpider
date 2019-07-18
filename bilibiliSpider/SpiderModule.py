@@ -1,3 +1,4 @@
+import bilibiliSpider
 from fake_headers import Headers
 import requests
 import sys
@@ -5,9 +6,8 @@ import os
 from bs4 import BeautifulSoup
 import re
 import time
-from bilibiliSpider import MasModule
-from bilibiliSpider import ToolModule
-from bilibiliSpider import Config
+from ToolBox import ToolModule
+import multiprocessing
 
 class bilibili_spider():
     def __init__(self):
@@ -57,27 +57,33 @@ class bilibili_spider():
             'movie' : [182, 183, 184, 85]
          }
         self.__error = []
+        self.__lock = multiprocessing.Lock()
 
     def __get_html_requests(self, url):
         if self.mas_proxy_flag:
             try_count = 0
-            html = MasModule.mas_get_html(url)
+            html = bilibiliSpider.mas_get_html(url)
             while html == None:
                 try_count += 1
                 if try_count == 3:
                     html = requests.get(url, headers=self.get_random_headers())
                 else:
-                    html = MasModule.mas_get_html(url)
+                    html = bilibiliSpider.mas_get_html(url)
                 time.sleep(1)
             return html
         else:
             return requests.get(url, headers=self.get_random_headers())
     def __log_error(self, aid):
+        self.__lock.acquire()
         if aid not in self.__error:
             self.__error.append(aid)
+        self.__lock.release()
 
     def get_error_count(self):
-        return len(self.__error)
+        self.__lock.acquire()
+        length = len(self.__error)
+        self.__lock.release()
+        return length
 
     def get_random_headers(self, browser='Chrome'):
         '''
@@ -238,7 +244,7 @@ class bilibili_spider():
         info = []
         for i in range(port_begin, port_end):
             try:
-                MasModule.mas_random_stop(0.1, 0.3)
+                ToolModule.tool_stop_random_time(0.1, 0.25)
                 url = self.api_latest_video.format(i, 1, 1)
                 res = self.__get_html_requests(url)
                 res_dict = res.json()
@@ -260,24 +266,26 @@ class bilibili_spider():
 
 
 
-# test_aid = 57721760
-# test_aid = 55406216
-test = bilibili_spider()
-# x = test.get_video_upload_time_info(57649778)
-# # x = test.get_raw_video_info(19308734)
-# # x = test.get_raw_video_info(19308734)
-# x = test.get_raw_video_info(test_aid)
-# x = test.get_video_upload_time_info(test_aid)
+if __name__ == '__main__':
 
-# test.mas_proxy_flag = True
-# x = test.get_video_length_info(test_aid)
-# print(x)
-# test = bilibili_spider()
-# res = requests.get(url=test. .format(57721760), proxies={"http": "http://{}".format(proxy)})
-#
-# print(res.text)
-# a = test.get_raw_video_info(59037693)
-# print(a)
-# test.mas_proxy_flag = Config.spider_config.mas_proxy_flag
-# a = test._get_html_requests(r'https://api.bilibili.com/x/web-interface/archive/stat?aid=59037693')
-# print(a.json())
+    # test_aid = 57721760
+    # test_aid = 55406216
+    test = bilibili_spider()
+    # x = test.get_video_upload_time_info(57649778)
+    # # x = test.get_raw_video_info(19308734)
+    # # x = test.get_raw_video_info(19308734)
+    # x = test.get_raw_video_info(test_aid)
+    # x = test.get_video_upload_time_info(test_aid)
+
+    # test.mas_proxy_flag = True
+    # x = test.get_video_length_info(test_aid)
+    # print(x)
+    # test = bilibili_spider()
+    # res = requests.get(url=test. .format(57721760), proxies={"http": "http://{}".format(proxy)})
+    #
+    # print(res.text)
+    # a = test.get_raw_video_info(59037693)
+    # print(a)
+    # test.mas_proxy_flag = Config.spider_config.mas_proxy_flag
+    # a = test._get_html_requests(r'https://api.bilibili.com/x/web-interface/archive/stat?aid=59037693')
+    # print(a.json())

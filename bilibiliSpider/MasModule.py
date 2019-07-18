@@ -1,23 +1,21 @@
 '''
 Masquerading Module
 '''
-import random
+import ToolBox
+import bilibiliSpider
+from Config import spider_config
 import time
 import requests
 from fake_headers import Headers
 import socket
-from bilibiliSpider import ToolModule
-from bilibiliSpider import Config
+
 
 
 headers= Headers(browser='Chrome')
 
 #set your own proxy pool address, default is localhost port 5010
-_ip_proxy_pool_addr = Config.spider_config.mas_proxy_pool_ip
+_ip_proxy_pool_addr = spider_config.mas_proxy_pool_ip
 
-def mas_random_stop(begin=0, end=0.1):
-    sleep_time = random.uniform(begin, end)
-    time.sleep(sleep_time)
 
 def mas_get_proxy():
     return requests.get("http://{}/get/".format(_ip_proxy_pool_addr)).content #get proxy
@@ -43,7 +41,7 @@ def mas_get_html(url):
             return html
         except Exception as e:
             log = 'mas_get_html error {} {}'.format(url, e)
-            ToolModule.tool_log_info(level='error', message=log)
+            ToolBox.tool_log_info(level='error', message=log)
             print('mas_get_html error {}'.format(e))
             retry_count -= 1
     # 出错5次, 删除代理池中代理

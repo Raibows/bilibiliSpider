@@ -23,6 +23,8 @@
     - 2019/7/17 
         add generator function for fakedata module
         add proxy_pool module, not ready for using
+    - 2019/7/18
+        Greatly adjust file structure
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
