@@ -21,8 +21,9 @@ def tool_log_info(level='info', message='NOTHING'):
 def tool_count_time(func):
     def wrapper(*args, **kwargs):
         time1 = time.clock()
-        func(*args, **kwargs)
+        res = func(*args, **kwargs)
         print(func.__name__, 'costs', time.clock() - time1, 'seconds')
+        return res
     return wrapper
 
 def tool_stop_random_time(min_time=0, max_time=1):

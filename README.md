@@ -25,6 +25,8 @@
         add proxy_pool module, not ready for using
     - 2019/7/18
         Greatly adjust file structure
+    - 2019/7/19
+        Changed the way of generating error data, more scientific
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update

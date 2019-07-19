@@ -103,18 +103,9 @@
       <change afterPath="$PROJECT_DIR$/../testforflasksql/venv/pyvenv.cfg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../untitled" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExperimentFeature/MultiProcessModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MachineLearning/FakedataModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/FakedataModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MachineLearning/bilibili_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MachineLearning/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProxyPool/test_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProxyPool/test_proxy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/Config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/MasModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/MasModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/ToolModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/ToolBox/ToolModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToolBox/ToolModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/ToolBox/ToolModule.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,28 +188,28 @@
         <option value="$PROJECT_DIR$/1.py" />
         <option value="$PROJECT_DIR$/bilibili_rank_data.csv" />
         <option value="$PROJECT_DIR$/MachineLearning/NormalizeModule.py" />
-        <option value="$PROJECT_DIR$/MachineLearning/FakedataModule.py" />
         <option value="$PROJECT_DIR$/ExperimentFeature/test_proxy.py" />
         <option value="$PROJECT_DIR$/ProxyPool.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/ProxyPool/test_proxy.py" />
         <option value="$PROJECT_DIR$/bilibiliSpider/ToolModule.py" />
         <option value="$PROJECT_DIR$/bilibiliSpider/run.py" />
         <option value="$PROJECT_DIR$/ExperimentFeature/Coroutines.py" />
         <option value="$PROJECT_DIR$/MachineLearning/__init__.py" />
-        <option value="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" />
         <option value="$PROJECT_DIR$/ProxyPool/__init__.py" />
         <option value="$PROJECT_DIR$/ToolBox/Config.py" />
         <option value="$PROJECT_DIR$/bilibiliSpider/Config.py" />
         <option value="$PROJECT_DIR$/MachineLearning/run.py" />
         <option value="$PROJECT_DIR$/ToolBox/__init__.py" />
-        <option value="$PROJECT_DIR$/ToolBox/ToolModule.py" />
         <option value="$PROJECT_DIR$/Config.py" />
         <option value="$PROJECT_DIR$/bilibiliSpider/__init__.py" />
         <option value="$PROJECT_DIR$/bilibiliSpider/MasModule.py" />
         <option value="$PROJECT_DIR$/bilibiliSpider/SpiderModule.py" />
         <option value="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/ToolBox/ToolModule.py" />
+        <option value="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" />
+        <option value="$PROJECT_DIR$/MachineLearning/FakedataModule.py" />
       </list>
     </option>
   </component>
@@ -241,6 +232,11 @@
             <path>
               <item name="bilibilivideohot" type="b2602c69:ProjectViewProjectNode" />
               <item name="bilibilivideohot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bilibilivideohot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bilibilivideohot" type="462c0819:PsiDirectoryNode" />
+              <item name="MachineLearning" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,8 +278,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="Config" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.PerceptronModule">
+    <configuration name="FakedataModule" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bilibilivideohot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -291,12 +287,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bilibiliSpider" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachineLearning" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bilibiliSpider/Config.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachineLearning/FakedataModule.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PerceptronModule" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bilibilivideohot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachineLearning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -393,43 +411,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_proxy (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="bilibilivideohot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ProxyPool" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ProxyPool/test_proxy.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.run" />
-      <item itemvalue="Python.test_proxy (1)" />
-      <item itemvalue="Python.Config" />
       <item itemvalue="Python.ToolModule" />
       <item itemvalue="Python.run (1)" />
+      <item itemvalue="Python.PerceptronModule" />
+      <item itemvalue="Python.FakedataModule" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.PerceptronModule" />
+        <item itemvalue="Python.FakedataModule" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python.run (1)" />
         <item itemvalue="Python.ToolModule" />
-        <item itemvalue="Python.Config" />
-        <item itemvalue="Python.test_proxy (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -464,12 +460,12 @@
       <workItem from="1562574615403" duration="27915000" />
       <workItem from="1562721543869" duration="6690000" />
       <workItem from="1562894188415" duration="7725000" />
-      <workItem from="1562987350030" duration="54712000" />
+      <workItem from="1562987350030" duration="64297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246017000" />
+    <option name="totallyTimeSpent" value="255602000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -485,17 +481,17 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.2505423" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2505423" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21362229" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994577" visible="true" weight="0.05779154" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993808" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33436534" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32920536" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.4365325" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005423" side_tool="true" weight="0.30856553" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32920536" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -539,13 +535,13 @@
     <SUITE FILE_PATH="coverage/bilibilivideohot$test_proxy__1_.coverage" NAME="test_proxy (1) Coverage Results" MODIFIED="1563366061627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProxyPool" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$ToolModule.coverage" NAME="ToolModule Coverage Results" MODIFIED="1563420107604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$SpiderModule.coverage" NAME="SpiderModule Coverage Results" MODIFIED="1563251567687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$run.coverage" NAME="run Coverage Results" MODIFIED="1563430081616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$FakedataModule.coverage" NAME="FakedataModule Coverage Results" MODIFIED="1563333902516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$run.coverage" NAME="run Coverage Results" MODIFIED="1563505414473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$FakedataModule.coverage" NAME="FakedataModule Coverage Results" MODIFIED="1563512949483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$MultiProcessModule.coverage" NAME="MultiProcessModule Coverage Results" MODIFIED="1562984666754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$Config.coverage" NAME="Config Coverage Results" MODIFIED="1563419053184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$test_proxy.coverage" NAME="test_proxy Coverage Results" MODIFIED="1563351729994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1563429822112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$PerceptronModule.coverage" NAME="PerceptronModule Coverage Results" MODIFIED="1563334420346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$PerceptronModule.coverage" NAME="PerceptronModule Coverage Results" MODIFIED="1563512953825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$NormalizeModule.coverage" NAME="NormalizeModule Coverage Results" MODIFIED="1563282561633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$spider_ranklist.coverage" NAME="spider_ranklist Coverage Results" MODIFIED="1560267773462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$testhh.coverage" NAME="testhh Coverage Results" MODIFIED="1560696055911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -563,7 +559,6 @@
     <SUITE FILE_PATH="coverage/bilibilivideohot$chrometest.coverage" NAME="chrometest Coverage Results" MODIFIED="1560229295946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/logging.txt" />
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-681699660/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -745,16 +740,6 @@
     <entry file="file://$PROJECT_DIR$/ProxyPool.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="672">
-            <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/bilibili_rank_data.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
@@ -831,24 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachineLearning/FakedataModule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding>
-            <element signature="e#39#2698#0" />
-            <element signature="e#2774#3314#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachineLearning/PerceptronModule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MachineLearning/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -877,16 +844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ToolBox/ToolModule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="3" selection-end-line="4" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,17 +895,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-1689">
+            <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv3.7/Lib/site-packages/numba/six.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="657" selection-start-line="657" selection-end-line="657" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ToolBox/ToolModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bilibiliSpider/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="5" />
+        <state relative-caret-position="288">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MachineLearning/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="288">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
             <element signature="e#65#595#0" />
@@ -957,17 +955,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/MachineLearning/PerceptronModule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="226">
+          <caret line="214" column="36" lean-forward="true" selection-start-line="214" selection-start-column="36" selection-end-line="214" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Config.py">
+    <entry file="file://$PROJECT_DIR$/MachineLearning/FakedataModule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="160">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#65#2771#0" />
+            <element signature="e#2845#3385#0" />
+            <element signature="e#3768#4725#0" />
+          </folding>
         </state>
       </provider>
     </entry>

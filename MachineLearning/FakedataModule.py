@@ -1,5 +1,22 @@
 import random
+import ToolBox
+import math
 
+
+def universal_data_convert(temp:float):
+    '''
+    randomly change the value of temp
+    for generating error data
+    :param temp:
+    :return:
+    '''
+    temp *= (random.uniform(1, 2) - 1) ** random.uniform(1, 2)
+    temp += random.uniform(-1, 1)
+    if temp >= 0:
+        temp = temp ** random.uniform(1, 2)
+    else:
+        temp = (-temp) ** random.uniform(1, 2)
+    return temp
 
 class fake_data():
     def __init__(self, variables=None, data_size=1000, error_data_ratio=0, precision=17):
@@ -45,7 +62,7 @@ class fake_data():
             else:
                 self.__error_data.append(error_index)
                 temp = self.__test_exps[error_index]
-                temp *= random.uniform(0, 2.1786)
+                temp = universal_data_convert(temp)
                 self.__test_exps[error_index] = temp
 
 
@@ -77,8 +94,6 @@ class fake_data():
         return info
 
 
-
-
 def fakedata_generate(weights:list, num_max:int=10, precision=17):
     '''
     this is a generator function
@@ -98,8 +113,51 @@ def fakedata_generate(weights:list, num_max:int=10, precision=17):
         num += 1
 
 
+@ToolBox.tool_count_time
+def get_test_data_pro(weights:list, num_max:int=1000, error_ratio=0.0, precision=17):
+    '''
+    this is high performance version for getting test data with numba.jit
+    decorator
+    :return:
+    '''
+    vecs = []
+    exps = []
+    vec_num = len(weights)
+    error_data_num = int(error_ratio * num_max)
+    for _i in range(num_max):
+        temp = []
+        exp = 0.0
+        for _vec in range(vec_num):
+            x = random.uniform(1, 2) - 1
+            x = round(x, precision)
+            temp.append(x)
+        if temp not in vecs:
+            # print('hhh')
+            if _i < error_data_num:
+                for _j, _vec in enumerate(temp):
+                    exp += _vec * weights[_j] * random.uniform(0.001, 1000)
+                exp = universal_data_convert(exp)
+            else:
+                for _j, _vec in enumerate(temp):
+                    exp += _vec * weights[_j]
+            exp = round(exp, precision)
+            vecs.append(temp)
+            exps.append(exp)
+        else:
+            _i -= 1
+
+    return vecs, exps
+
+
+
+
 if __name__ == '__main__':
-    test_weights = [1, 2, 3, 4, -1]
-    fake_data_generator = fakedata_generate(test_weights, 10, 3)
-    for item in fake_data_generator:
-        print(item)
+    test_weights = [1.2, 2.1, 3.66, 4.48, -1.05, 0.994, 2.768, 12.66]
+    # fake_data_generator = fakedata_generate(test_weights, 10, 3)
+    # for item in fake_data_generator:
+    #     print(item)
+    # fake = fake_data(test_weights)
+    # test_data = fake.get_test_data()
+
+    x = get_test_data_pro(test_weights, num_max=10, precision=6, error_ratio=0.1)
+    print(x)

@@ -2,11 +2,17 @@ import os
 import ToolBox
 
 
+
 def universal_activator(predict, expect):
     if expect == 0:
-        return 9
-    ratio = predict / expect
-    return 1 if ratio == 1 else ratio
+        base = 1e-10
+        if abs(predict) < base:
+            return 1
+        else:
+            ratio = predict / base
+    else:
+        ratio = predict / expect
+    return ratio
 
 
 class perceptron():
@@ -100,6 +106,7 @@ class perceptron():
             self.__variance_result.append(self.__latest_variance)
             if self.__latest_variance < stop_variance:
                 print(f'\n\ntrain {i+1} done ! \n{self}')
+                print('done')
                 return
             if self.__judge_stop_training():
                 print("CAN'T FIT THIS DATA \nNO NEED FOR TRAINING ANYMORE")
@@ -177,7 +184,7 @@ if __name__ == '__main__':
     import MachineLearning
 
     variables = [0.3, 1, 2.1, 0.66, 0.841, 0.247, 1.6, 7.1]
-    example = MachineLearning.fake_data(variables=variables, data_size=100, error_data_ratio=0, precision=3)
+    example = MachineLearning.fake_data(variables=variables, data_size=1000, error_data_ratio=0.01, precision=17)
     data = example.get_test_data()
 
     test_vecs = data.get('test_vecs')
@@ -200,3 +207,21 @@ if __name__ == '__main__':
         stop_variance=1e-10
     )
     print(example)
+
+'''
+DATA100:
+10000:   variance     cost     stop
+after:   9.5e-8       19.21s   10000
+before:  9.3e-8       17.79s   10000
+
+30000:   variance     cost     stop
+after:   9.3e-8       53.83s   27142
+before:  8.7e-8       48.39s   27298
+
+
+DATA1000:
+10000:   variance     cost     stop
+after:   1.0e-7       42.63s   2451
+before:  1.2e-7       38.42s   2034
+
+'''
