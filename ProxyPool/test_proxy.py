@@ -3,7 +3,10 @@ from bs4 import BeautifulSoup
 import os
 import time
 import threading
+import aiohttp
+import asyncio
 
+default_check_time = 10
 
 
 class proxy_pool():
@@ -15,12 +18,15 @@ class proxy_pool():
         self.__proxy = []
         self.__html_lib = None
 
-        self.__timer = threading.Timer(1, self.__timer_check)
-        self.__timer.start()
+        # self.__timer = threading.Timer(1, self.__drive_timer_check)
+        # self.__timer.start()
+
+        self.__check_time = default_check_time
+
 
     def __first_get_html(self):
         html_lib = []
-        for _i in range(1, 5):
+        for _i in range(1, 2):
             page_url = self.__proxy_urls[0].format(_i)
             print(page_url)
             html = requests.get(page_url, timeout=3)
@@ -30,18 +36,25 @@ class proxy_pool():
 
         self.__html_lib = html_lib
 
-    def __check_available(self, proxy):
+    async def __check_available(self, proxy):
         print(f'checking {proxy}')
         try:
-            html = requests.get(self.__test_ip_url, proxies={"http": "http://{}".format(proxy)}, timeout=3)
+            proxy = f'http://{proxy}'
+            async with aiohttp.ClientSession() as session:
+                response = await session.get(
+                    url=self.__test_ip_url,
+                    proxy=proxy,
+                    timeout=5,
+                )
+            print(response.status)
         except:
             return False
-        if html.status_code == 200 and html.json().get("origin"):
+        if response.status == 200 and response.json().get("origin"):
             return True
         return False
 
     def _get_proxy(self):
-        self.__get_html()
+        self.__first_get_html()
         for html in self.__html_lib:
             soup = BeautifulSoup(html, features="html5lib")
             ips = soup.find_all(
@@ -60,25 +73,33 @@ class proxy_pool():
             proxies = zip(ips, ports)
             for item in proxies:
                 proxy = item[0].string + ':' + item[1].string
-                if self.__check_available(proxy):
-                    self.__proxy.append(proxy)
+                # if self.__check_available(proxy):
+                self.__proxy.append(proxy)
+            # self.__drive_timer_check()
 
 
-    def __timer_check(self):
+    async def __timer_check(self):
         if len(self.__proxy) != 0:
-            for proxy in self.__proxy:
-                if not self.__check_available(proxy):
-                    self.__proxy.remove(proxy)
+            proxy_num = self.get_proxy_num()
+            tasks = [asyncio.create_task(self.__check_available(self.__proxy[_i]) for _i in range(proxy_num))]
+            print(tasks)
+            await asyncio.gather(asyncio.wait(tasks))
+            print(tasks)
+            for _i in range(proxy_num):
+                if tasks[_i].result() == False:
+                    del self.__proxy[_i]
         else:
             print('proxy pool is None')
-        self.__timer = threading.Timer(10, self.__timer_check)
-        self.__timer.start()
 
-
-
+    def _drive_timer_check(self):
+        while True:
+            asyncio.run(self.__timer_check())
+            time.sleep(self.__check_time)
+        # thread = threading.Timer(self.__check_time, self.__drive_timer_check)
+        # thread.start()
 
     def get_proxy_num(self):
-        print(self.__proxy)
+        # print(self.__proxy)
         return len(self.__proxy)
 
 
@@ -87,16 +108,8 @@ class proxy_pool():
 
 
 if __name__ == '__main__':
-    # test = proxy_pool()
-    # test._get_proxy()
-    # test.get_proxy_num()
-    proxy = '39.97.50.177:6677'
-    test_url = r'https://www.bilibili.com/index/ding.json'
-    test_ip_url = 'http://httpbin.org/ip'
-    while True:
-        res = requests.get(test_ip_url, proxies={"http": "http://{}".format(proxy)}, timeout=3)
-        print(res.status_code)
-        res = res.json()
-        print(res.get('origin'))
-        time.sleep(3)
+    test = proxy_pool()
+    test._get_proxy()
+    test._drive_timer_check()
+
 

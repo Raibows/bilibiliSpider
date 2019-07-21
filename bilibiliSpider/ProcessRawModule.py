@@ -161,7 +161,7 @@ def process_merge_csv(tasks=default_tasks, output_path=default_output_path):
 
 
 #make your own rule to collect info
-@ToolBox.tool_count_time
+
 def process_multi_tasks(tasks=default_tasks, output_path=default_output_path):
     '''
     Multi processors spider
@@ -246,6 +246,7 @@ def process_single_tasks(spider=default_spider, csv_path=default_output_path, ra
         ToolBox.tool_log_info(level='info', message=log)
 
 
+@ToolBox.tool_count_time
 def process_run_main(multi_processor_flag=default_multi_processor_flag):
     info = spider_config.get_config_info()
     print(info)

@@ -27,6 +27,8 @@
         Greatly adjust file structure
     - 2019/7/19
         Changed the way of generating error data, more scientific
+    - 2019/7/21
+        Try to use coroutines for proxy pool module(not avaliable now)
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
