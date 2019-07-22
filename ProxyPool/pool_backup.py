@@ -1,3 +1,4 @@
+import Config
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -5,8 +6,10 @@ import time
 import threading
 import aiohttp
 import asyncio
+import ToolBox
 
-default_check_time = 10
+
+default_check_interval = Config.proxypool_config.check_interval
 
 
 class proxy_pool():
@@ -18,11 +21,10 @@ class proxy_pool():
         self.__proxy = []
         self.__html_lib = None
 
-        # self.__timer = threading.Timer(1, self.__drive_timer_check)
-        # self.__timer.start()
+        self.__check_interval = default_check_interval
 
-        self.__check_time = default_check_time
-
+        self.__timer = threading.Timer(1, self._drive_timer_check)
+        self.__timer.start()
 
     def __first_get_html(self):
         html_lib = []
@@ -45,11 +47,15 @@ class proxy_pool():
                     url=self.__test_ip_url,
                     proxy=proxy,
                     timeout=5,
+                    headers=ToolBox.tool_get_random_headers()
                 )
             print(response.status)
         except:
             return False
-        if response.status == 200 and response.json().get("origin"):
+        if response.status == 503:
+            return False
+        temp = await response.json()
+        if response.status == 200 and temp.get("origin"):
             return True
         return False
 
@@ -81,22 +87,23 @@ class proxy_pool():
     async def __timer_check(self):
         if len(self.__proxy) != 0:
             proxy_num = self.get_proxy_num()
-            tasks = [asyncio.create_task(self.__check_available(self.__proxy[_i]) for _i in range(proxy_num))]
-            print(tasks)
-            await asyncio.gather(asyncio.wait(tasks))
-            print(tasks)
+            tasks = [self.__check_available(item) for item in self.__proxy]
+            # print(tasks)
+            done = await asyncio.gather(*tasks)
+            # print(tasks)
+            # print(done)
             for _i in range(proxy_num):
-                if tasks[_i].result() == False:
+                if done[_i] == False:
                     del self.__proxy[_i]
         else:
             print('proxy pool is None')
 
     def _drive_timer_check(self):
-        while True:
-            asyncio.run(self.__timer_check())
-            time.sleep(self.__check_time)
-        # thread = threading.Timer(self.__check_time, self.__drive_timer_check)
-        # thread.start()
+        # while True:
+        asyncio.run(self.__timer_check())
+        # time.sleep(self.__check_interval)
+        thread = threading.Timer(self.__check_interval, self._drive_timer_check)
+        thread.start()
 
     def get_proxy_num(self):
         # print(self.__proxy)
@@ -108,8 +115,13 @@ class proxy_pool():
 
 
 if __name__ == '__main__':
-    test = proxy_pool()
-    test._get_proxy()
-    test._drive_timer_check()
+    # test = proxy_pool()
+    # test._get_proxy()
+    # while True:
+    #     print(test.get_proxy_num())
+    #     time.sleep(15)
+    # test._drive_timer_check()
+
+    # hello = [0, 1, 2, 3]
 
 

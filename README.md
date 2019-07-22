@@ -29,6 +29,8 @@
         Changed the way of generating error data, more scientific
     - 2019/7/21
         Try to use coroutines for proxy pool module(not avaliable now)
+    - 2019/7/22
+        Apply coroutines to proxy pool module succeesully
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
@@ -83,7 +85,13 @@
 7.2019/7/17<br>
     Nowadays, I'm doing some mathematic foundation for building a fully connected network with perceptron. It's easy on theory but hard on practice.<br>
     And today's later update has added a test module, *proxy pool module*. I borrowed from some others' proxy_pool. The biggest problem for this module is the spider efficiency is too low. *Multiple process*, *thread*, and *coroutines* are all need for better peroformance. Can't avoid using
-    them.
+    them.<br>
+8.2019/7/22<br>
+    Finally successfully used *coroutines* on proxy pool module! I just failed to apply it to bilibili spider module for many times 
+    a few days ago. *aiohttp*, *Python async* documentations help me a lot.<br>
+    The proxy pool module used *multi thread*, *coroutins* up to now. I have to say the spider procedure is more than 10 
+    times faster than before after using *coroutines*. The next few days, I will try *redis* and *Flask* to build
+    my own proxy pool. 
     
     
     

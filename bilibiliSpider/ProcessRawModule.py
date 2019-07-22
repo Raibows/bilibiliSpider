@@ -125,7 +125,7 @@ def process_one_task(video_category, spider=default_spider, rank_type='origin'):
     with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(info)
-        log = f'done ! spider {count} videos failed in {spider.get_error_count()} videos'
+        log = f'{video_category}done ! spider {count} videos failed in {spider.get_error_count()} videos'
         print(log)
         ToolBox.tool_log_info(level='info', message=log)
 
@@ -162,7 +162,7 @@ def process_merge_csv(tasks=default_tasks, output_path=default_output_path):
 
 #make your own rule to collect info
 
-def process_multi_tasks(tasks=default_tasks, output_path=default_output_path):
+def process_multi_tasks(tasks=default_tasks, rank_tyoe='origin'):
     '''
     Multi processors spider
     :param tasks: video categories like ['guochuang', 'movie']
@@ -178,12 +178,12 @@ def process_multi_tasks(tasks=default_tasks, output_path=default_output_path):
 
     p.close()
     p.join()
-    process_merge_csv(tasks, output_path)
+
     log = f'done ! spider videos failed in {default_spider.get_error_count()} videos'
     ToolBox.tool_log_info(level='info', message=log)
 
 
-def process_single_tasks(spider=default_spider, csv_path=default_output_path, rank_type='origin'):
+def process_single_tasks(spider=default_spider, rank_type='origin'):
     '''
     make your own rule to collect info with single processor
     :param spider:
@@ -191,7 +191,7 @@ def process_single_tasks(spider=default_spider, csv_path=default_output_path, ra
     :param rank_type:
     :return:
     '''
-    video_category = list(spider.video_category.keys())
+    video_category = default_tasks
     info = []
     head = ['0rank_type', '1video_type', '2video_id', '3ranking',
                  '4video_title', '5video_upload_time', '6video_length_time',
@@ -199,7 +199,7 @@ def process_single_tasks(spider=default_spider, csv_path=default_output_path, ra
                  '10view', '11danmaku', '12reply', '13favorite', '14coin', '15share', '16like',
                  '17points', '18spider_time'
             ]
-    info.append(head)
+    # info.append(head)
     count = 0
     for video_type in video_category:
         ToolBox.tool_stop_random_time(max_time=0.3)
@@ -237,13 +237,13 @@ def process_single_tasks(spider=default_spider, csv_path=default_output_path, ra
             print(log)
             ToolBox.tool_log_info(level='info', message=log)
             info.append(video_info)
-
-    with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerows(info)
-        log = f'done ! spider {count} videos failed in {spider.get_error_count()} videos'
-        print(log)
-        ToolBox.tool_log_info(level='info', message=log)
+        csv_path = 'bilibili_rank_data' + f'_{video_type}.csv'
+        with open(csv_path, 'a+', encoding='utf-8', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerows(info)
+            log = f'{video_type} done ! spider {count} videos failed in {spider.get_error_count()} videos'
+            print(log)
+            ToolBox.tool_log_info(level='info', message=log)
 
 
 @ToolBox.tool_count_time
@@ -257,6 +257,8 @@ def process_run_main(multi_processor_flag=default_multi_processor_flag):
     else:
         process_single_tasks()
 
+    process_merge_csv(default_tasks, default_output_path)
+
 
 
 
@@ -266,6 +268,7 @@ def process_run_main(multi_processor_flag=default_multi_processor_flag):
 
 if __name__ == '__main__':
 
+    process_merge_csv()
     # tasks = list(default_spider.video_category.keys())
     # tasks = ['game', 'movie', 'dance']
     # process_multi_tasks(tasks, output_path='output.csv')

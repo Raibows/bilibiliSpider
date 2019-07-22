@@ -2,16 +2,12 @@
 Masquerading Module
 '''
 import ToolBox
-import bilibiliSpider
 from Config import spider_config
 import time
 import requests
-from fake_headers import Headers
 import socket
 
 
-
-headers= Headers(browser='Chrome')
 
 #set your own proxy pool address, default is localhost port 5010
 _ip_proxy_pool_addr = spider_config.mas_proxy_pool_ip
@@ -32,7 +28,7 @@ def mas_get_html(url):
         try:
             # print('hhh')
             # print('proxy', proxy)
-            html =  requests.get(url, headers=headers.generate(),
+            html =  requests.get(url, headers=ToolBox.tool_get_random_headers(),
                                 proxies={"http": "http://{}".format(proxy)})
             if html == None:
                 time.sleep(1)

@@ -1,12 +1,11 @@
 import bilibiliSpider
-from fake_headers import Headers
 import requests
 import sys
 import os
 from bs4 import BeautifulSoup
 import re
 import time
-from ToolBox import ToolModule
+import ToolBox
 import multiprocessing
 
 class bilibili_spider():
@@ -66,13 +65,13 @@ class bilibili_spider():
             while html == None:
                 try_count += 1
                 if try_count == 3:
-                    html = requests.get(url, headers=self.get_random_headers())
+                    html = requests.get(url, headers=ToolBox.tool_get_random_headers())
                 else:
                     html = bilibiliSpider.mas_get_html(url)
                 time.sleep(1)
             return html
         else:
-            return requests.get(url, headers=self.get_random_headers())
+            return requests.get(url, headers=ToolBox.tool_get_random_headers())
     def __log_error(self, aid):
         self.__lock.acquire()
         if aid not in self.__error:
@@ -85,13 +84,6 @@ class bilibili_spider():
         self.__lock.release()
         return length
 
-    def get_random_headers(self, browser='Chrome'):
-        '''
-        :return:random headers
-        '''
-        headers = Headers(browser=browser)
-        temp = headers.generate()
-        return temp
 
     def get_raw_video_info(self, aid):
         '''
@@ -140,7 +132,7 @@ class bilibili_spider():
         except:
             video_time = -1
             log = 'ERROR IN GETTING VIDEO LENGTH AID {}'.format(aid)
-            ToolModule.tool_log_info(level='error', message=log)
+            ToolBox.tool_log_info(level='error', message=log)
             print(log)
         return video_time
 
@@ -157,12 +149,12 @@ class bilibili_spider():
             res = res.text
         except Exception as e:
             log = 'ERROR in getting video upload time {} {}'.format(aid, e)
-            ToolModule.tool_log_info(level='error', message=log)
+            ToolBox.tool_log_info(level='error', message=log)
             print(log)
             res = error_flag
         if error_flag in res:
             log = 'ERROR in getting video upload time {} {}'.format(aid, error_flag)
-            ToolModule.tool_log_info(level='error', message=log)
+            ToolBox.tool_log_info(level='error', message=log)
             self.__log_error(aid)
             return -1
         try:
@@ -170,7 +162,7 @@ class bilibili_spider():
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
         except Exception as e:
             log = 'ERROR in getting video upload time {} {}'.format(aid, e)
-            ToolModule.tool_log_info(level='error', message=log)
+            ToolBox.tool_log_info(level='error', message=log)
             print(log)
             upload_time = re.findall(r'\"time\":\"\d+-\d+-\d+\s+\d+:\d+:\d+\",', res)[0]
             upload_time = re.findall(r'\d+-\d+-\d+\s+\d+:\d+:\d+', upload_time)[0]
@@ -198,7 +190,7 @@ class bilibili_spider():
             url = self.api_rank.format(self.rank_category.get(rank_type), self.video_category.get(video_type)) + suffix
         except Exception as e:
             log = 'ERROR IN {} VIDEO_TYPE={} {}'.format(sys._getframe().f_code.co_name, video_type, e)
-            ToolModule.tool_log_info(level='error', message=log)
+            ToolBox.tool_log_info(level='error', message=log)
             print(log)
             os._exit(-1)
         else:
@@ -244,7 +236,7 @@ class bilibili_spider():
         info = []
         for i in range(port_begin, port_end):
             try:
-                ToolModule.tool_stop_random_time(0.1, 0.25)
+                ToolBox.tool_stop_random_time(0.1, 0.25)
                 url = self.api_latest_video.format(i, 1, 1)
                 res = self.__get_html_requests(url)
                 res_dict = res.json()
