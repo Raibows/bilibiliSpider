@@ -31,6 +31,8 @@
         Try to use coroutines for proxy pool module(not avaliable now)
     - 2019/7/22
         Apply coroutines to proxy pool module succeesully
+    - 2019/7/23
+        Add redis module
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update

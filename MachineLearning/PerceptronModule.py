@@ -4,6 +4,12 @@ import ToolBox
 
 
 def universal_activator(predict, expect):
+    '''
+    activator for fitting data
+    :param predict:
+    :param expect:
+    :return:
+    '''
     if expect == 0:
         base = 1e-10
         if abs(predict) < base:
@@ -184,7 +190,7 @@ if __name__ == '__main__':
     import MachineLearning
 
     variables = [0.3, 1, 2.1, 0.66, 0.841, 0.247, 1.6, 7.1]
-    example = MachineLearning.fake_data(variables=variables, data_size=1000, error_data_ratio=0.01, precision=17)
+    example = MachineLearning.fake_data(variables=variables, data_size=1000, error_data_ratio=0, precision=17)
     data = example.get_test_data()
 
     test_vecs = data.get('test_vecs')

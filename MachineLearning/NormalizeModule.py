@@ -4,6 +4,13 @@ liner normalize
 import numpy as np
 
 def normalize_median(input_vecs:list, input_exps:list):
+    '''
+    warning: just for reducing the amount computation
+    not the real normalize
+    :param input_vecs:
+    :param input_exps:
+    :return:
+    '''
     vec_num = len(input_vecs[0])
     vecs_median = np.median(input_vecs)
     exps_median = np.median(input_exps)

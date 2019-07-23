@@ -115,6 +115,7 @@ class proxy_pool():
 
 
 if __name__ == '__main__':
+    pass
     # test = proxy_pool()
     # test._get_proxy()
     # while True:

@@ -13,6 +13,10 @@ default_spider_interval = proxypool_config.spider_interval
 default_print_interval = proxypool_config.print_interval
 
 class proxy_pool():
+    '''
+    proxy pool
+    use coroutines for spider on free-proxy web
+    '''
     def __init__(self):
         self.__proxy_urls = [
             r'https://www.kuaidaili.com/free/inha/{}/'
