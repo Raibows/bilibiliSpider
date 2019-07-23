@@ -11,6 +11,8 @@ import ToolBox
 default_check_interval = proxypool_config.check_interval
 default_spider_interval = proxypool_config.spider_interval
 default_print_interval = proxypool_config.print_interval
+default_check_proxy_timeout = proxypool_config.check_proxy_timeout
+
 
 class proxy_pool():
     '''
@@ -29,6 +31,7 @@ class proxy_pool():
         self.__spider_interval = default_spider_interval
         self.__print_interval = default_print_interval
 
+        self.__db = ProxyPool.DatabaseModule.database()
 
 
     async def __get_html(self, url):
@@ -38,9 +41,15 @@ class proxy_pool():
 
 
     def __evaluate_pool(self):
+        delete_proxies = []
         for proxy in self.__pool:
             if proxy.points < 0:
                 self.__pool.remove(proxy)
+                delete_proxies.append(proxy)
+                print(f'Delete {proxy}')
+        self.__db.delete_proxies(delete_proxies)
+        self.__db.add_proxies(self.__pool)
+
 
     async def __process_first_html(self):
         tasks = [self.__get_html(self.__proxy_urls[0].format(_i)) for _i in range(1, 2)]
@@ -78,16 +87,16 @@ class proxy_pool():
                 response = await session.get(
                     url=self.__test_ip_url,
                     proxy=proxy,
-                    timeout=5,
+                    timeout=default_check_proxy_timeout,
                     headers=ToolBox.tool_get_random_headers()
                 )
-            # print(response.status)
+            response_status = response.status
         except:
             return False
-        if response.status == 503:
+        if response_status == 503:
             return False
         temp = await response.json()
-        if response.status == 200 and temp.get("origin"):
+        if response_status == 200 and temp.get("origin"):
             return True
         else:
             return False
@@ -159,5 +168,7 @@ if __name__ == '__main__':
 
     # hello = [0, 1, 2, 3]
     test.start_work()
+
+    print('hhhhh')
 
 

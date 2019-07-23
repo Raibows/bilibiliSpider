@@ -248,8 +248,7 @@ def process_single_tasks(spider=default_spider, rank_type='origin'):
 
 @ToolBox.tool_count_time
 def process_run_main(multi_processor_flag=default_multi_processor_flag):
-    info = spider_config.get_config_info()
-    print(info)
+    print(spider_config())
     print('spider will start in {} seconds ...'.format(10))
     time.sleep(10)
     if multi_processor_flag:

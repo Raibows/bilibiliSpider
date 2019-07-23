@@ -33,6 +33,7 @@
         Apply coroutines to proxy pool module succeesully
     - 2019/7/23
         Add redis module
+        Redis Module bugs fix, improve stability
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update

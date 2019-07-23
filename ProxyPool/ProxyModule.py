@@ -22,3 +22,6 @@ class proxy():
 
     def __gt__(self, other):
         return True if self.points > other.points else False
+
+    def __repr__(self):
+        return self.__get_raw_address()
