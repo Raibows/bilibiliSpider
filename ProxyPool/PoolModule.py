@@ -24,6 +24,7 @@ class proxy_pool():
             r'https://www.kuaidaili.com/free/inha/{}/'
         ]
         self.__test_ip_url = 'http://httpbin.org/ip'
+        #http://icanhazip.com/ #another test ip
         self.__pool = []
         self.__html_lib = None
 
@@ -95,10 +96,13 @@ class proxy_pool():
             return False
         if response_status == 503:
             return False
-        temp = await response.json()
-        if response_status == 200 and temp.get("origin"):
-            return True
-        else:
+        try:
+            temp = await response.json()
+            if response_status == 200 and temp.get("origin"):
+                return True
+            else:
+                return False
+        except:
             return False
 
 
@@ -169,6 +173,5 @@ if __name__ == '__main__':
     # hello = [0, 1, 2, 3]
     test.start_work()
 
-    print('hhhhh')
 
 

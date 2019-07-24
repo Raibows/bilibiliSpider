@@ -49,6 +49,7 @@ class database():
                 dict_proxy = json.dumps(proxy.get_dict_address())
                 data[string_proxy] = dict_proxy
             self.__redis.mset(data)
+        print(f'Redis num {self.get_num()}')
 
     def get_one_string(self):
         '''
@@ -79,6 +80,7 @@ class database():
         if proxies:
             for proxy in proxies:
                 self.__redis.delete(proxy.get_string_address())
+        print(f'Redis num {self.get_num()}')
 
 
 if __name__ == '__main__':
