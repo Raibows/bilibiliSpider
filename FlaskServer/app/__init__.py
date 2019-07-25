@@ -1,5 +1,7 @@
 from flask import Flask
 app = Flask(__name__)
+from ProxyPool import database
+database = database()
 
 def create_app():
 

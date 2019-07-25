@@ -36,6 +36,8 @@
         Redis Module bugs fix, improve stability
     - 2019/7/24
         Add Flask Server module for connecting with proxypool database
+    - 2019/7/25
+        Add lots of interfaces for proxypool(pool module, database module)
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
