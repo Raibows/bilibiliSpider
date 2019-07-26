@@ -30,13 +30,28 @@ async def main(url, num:int):
         print(r)
 
 
-if __name__ == '__main__':
-    url = r'http://127.0.0.1:5000/'
+async def task_a():
+    await asyncio.sleep(5)
+    print('task-a done')
 
-    asyncio.run(main(url, 3))
-    # main(url, 3)
-    print(123)
+async def task_b():
+    await asyncio.sleep(2)
+    print('task-b done')
+
+async def taaa():
+    tasks = [task_a(), task_b()]
+    await asyncio.gather(*tasks)
+
+
+if __name__ == '__main__':
+    # url = r'http://127.0.0.1:5000/'
+    #
+    # asyncio.run(main(url, 3))
+    # # main(url, 3)
+    # print(123)
     # for item in ans:
     #     done, pending = item
     #     print(done)
     #     print(pending)
+
+    asyncio.run(taaa())

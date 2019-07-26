@@ -5,6 +5,8 @@ import threading
 import aiohttp
 import asyncio
 import ToolBox
+import random
+import time
 
 
 
@@ -41,7 +43,10 @@ class proxy_pool():
     async def __get_html(self, url):
         async with self.__semaphore:
             async with aiohttp.ClientSession() as session:
-                async with session.get(url) as response:
+                async with session.get(
+                    url=url,
+                    headers=ToolBox.tool_get_random_headers()
+                ) as response:
                     return await response.text()
 
 
@@ -76,13 +81,16 @@ class proxy_pool():
 
 
     async def __process_first_html(self):
-        tasks = [self.__get_html(self.__proxy_urls[0].format(_i)) for _i in range(1, 4)]
-        # print(tasks)
-        # os._exit(-1)
-        done = await asyncio.gather(*tasks)
+        import os
+        # tasks = [self.__get_html(self.__proxy_urls[0].format(_i)) for _i in range(1, 4)]
+        done = []
+        for _i in range(1, 4):
+            url = self.__proxy_urls[0].format(_i)
+            html = await self.__get_html(url)
+            done.append(html)
+            time.sleep(1.148)
+        # done = await asyncio.gather(*tasks)
         for html in done:
-            # print(html)
-            # os._exit(-1)
             soup = BeautifulSoup(html, features="html5lib")
             ips = soup.find_all(
                 'td',
@@ -97,11 +105,16 @@ class proxy_pool():
                 }
             )
             proxies = zip(ips, ports)
+            # print(len(ips))
+            # os._exit(-1)
             for item in proxies:
                 proxy = ProxyPool.proxy(item[0].string, item[1].string)
                 if item not in self.__pool:
                     self.__pool.append(proxy)
                     print(f'got {proxy.get_string_address()}')
+        #     print('here', self.get_proxy_num())
+        # print('final ', self.get_proxy_num())
+        # os._exit(-1)
 
     async def __check_available(self, proxy):
         proxy = proxy.get_string_address()

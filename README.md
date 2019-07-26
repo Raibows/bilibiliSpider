@@ -38,6 +38,9 @@
         Add Flask Server module for connecting with proxypool database
     - 2019/7/25
         Add lots of interfaces for proxypool(pool module, database module)
+    - 2019/7/26
+        Cancel the coroutines for fetching (kuaidaili.com) proxies
+        (because of its anti spider strategy)
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update

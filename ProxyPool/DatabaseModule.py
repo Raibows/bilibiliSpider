@@ -55,7 +55,7 @@ class database():
             self.__redis.mset(data)
         # print(f'Redis num {self.get_num()}')
 
-    def get_one_string(self):
+    def get_one_string(self) ->str or None:
         '''
         :return:string, proxy
         '''
