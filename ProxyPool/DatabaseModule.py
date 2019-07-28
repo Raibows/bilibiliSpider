@@ -128,11 +128,14 @@ if __name__ == '__main__':
 
     test = database()
     proxy = 'http://119.254.94.114:34422'
-    test.proxy_feedback(proxy, True)
+    # test.proxy_feedback(proxy, True)
     #
     a = ProxyPool.proxy('192.141.32.2', '2367')
     b = ProxyPool.proxy('111.23.214.123', '23')
     c = ProxyPool.proxy('111.23.214.123', '231')
+    test.add_proxies([a, b, c])
+
+
     # test.delete_proxies([a, b])
     # test.add_proxies([a, b, c])
     # test.add_proxies([a, b, c])

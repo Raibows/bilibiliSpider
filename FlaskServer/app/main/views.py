@@ -1,6 +1,6 @@
 from . import main
 from FlaskServer.app import database
-
+from flask import request
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -35,3 +35,29 @@ def get_one_dict():
         return temp
     else:
         return 'None'
+
+@main.route('/proxy/feedback', methods=['POST'])
+def feedback():
+    '''
+    only post allowed
+    flag:string, increase or decrease
+    :return:
+    '''
+    flag = request.form.get('flag')
+    if flag.lower() == 'increase':
+        flag = True
+        info = 'increase success'
+    elif flag.lower() == 'decrease':
+        flag = False
+        info = 'decrease success'
+    else:
+        return 'failed'
+    proxy = request.form.get('proxy')
+    database.proxy_feedback(
+        proxy_string_dict=proxy,
+        flag=flag,
+    )
+    return info
+
+
+

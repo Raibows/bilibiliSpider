@@ -41,6 +41,8 @@
     - 2019/7/26
         Cancel the coroutines for fetching (kuaidaili.com) proxies
         (because of its anti spider strategy)
+    - 2019/7/28
+        Perfect flask server api, get_one api, feedback api
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
