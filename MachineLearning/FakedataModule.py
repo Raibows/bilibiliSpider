@@ -152,12 +152,20 @@ def get_test_data_pro(weights:list, num_max:int=1000, error_ratio=0.0, precision
 
 
 if __name__ == '__main__':
-    test_weights = [1.2, 2.1, 3.66, 4.48, -1.05, 0.994, 2.768, 12.66]
+    import matplotlib.pyplot as plt
+    # test_weights = [1.2, 2.1, 3.66, 4.48, -1.05, 0.994, 2.768, 12.66]
     # fake_data_generator = fakedata_generate(test_weights, 10, 3)
     # for item in fake_data_generator:
     #     print(item)
     # fake = fake_data(test_weights)
     # test_data = fake.get_test_data()
+    test_weights = [3]
+    test = get_test_data_pro(test_weights, num_max=100, precision=6, error_ratio=0.8)
+    x = []
+    for item in test[0]:
+        x.append(item[0])
 
-    x = get_test_data_pro(test_weights, num_max=10, precision=6, error_ratio=0.1)
-    print(x)
+    y = test[1]
+    print(y)
+    plt.scatter(x, y, alpha=0.6)
+    plt.show()

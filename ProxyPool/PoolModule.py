@@ -203,14 +203,16 @@ class proxy_pool():
 
 
 if __name__ == '__main__':
-    test = proxy_pool()
-    # while True:
-    #     print(test.get_proxy_num())
-    #     time.sleep(15)
-    # test._drive_timer_check()
+    # test = proxy_pool()
+    # test.start_work()
 
-    # hello = [0, 1, 2, 3]
-    test.start_work()
-
-
-
+    import requests
+    url = 'http://httpbin.org/ip'
+    ip = '39.97.50.177:6677'
+    res = requests.get(
+        url=url,
+        proxies={
+            'http': "http://{}".format(ip)
+        }
+    )
+    print(res.text)

@@ -43,6 +43,8 @@
         (because of its anti spider strategy)
     - 2019/7/28
         Perfect flask server api, get_one api, feedback api
+    - 2019/8/2
+        Add GradientDescent module(.ipynb for jupyter Notebook)
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
