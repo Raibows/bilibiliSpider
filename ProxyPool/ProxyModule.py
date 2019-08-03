@@ -1,10 +1,11 @@
 
 
 class proxy():
-    def __init__(self, ip, port):
+    __slots__ = ['ip', 'port', 'points']
+    def __init__(self, ip, port, points=1):
         self.ip = ip
         self.port = port
-        self.points = 1
+        self.points = points
 
     def __get_raw_address(self):
         address = f'{self.ip}:{self.port}'

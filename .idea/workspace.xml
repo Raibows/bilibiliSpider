@@ -104,12 +104,11 @@
       <change afterPath="$PROJECT_DIR$/../testforflasksql/venv/pyvenv.cfg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../untitled" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MachineLearning/FakedataModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/FakedataModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MachineLearning/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MachineLearning/GradientDescent.py" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/GradientDescent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProxyPool/PoolModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProxyPool/PoolModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/ProcessRawModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibiliSpider/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/bilibiliSpider/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProxyPool/ProxyModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProxyPool/ProxyModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +119,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Unit Test" />
         <option value="Python Script" />
       </list>
     </option>
@@ -163,29 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GradientDescent">
-    <configuration name="Config" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="bilibilivideohot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Config.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.PerceptronModule">
     <configuration name="GradientDescent" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bilibilivideohot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -200,6 +178,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachineLearning/GradientDescent.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PerceptronModule" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bilibilivideohot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachineLearning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachineLearning/PerceptronModule.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -252,28 +252,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="bilibilivideohot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachineLearning" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachineLearning/run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bilibilivideohot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -296,21 +274,43 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test-try" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bilibilivideohot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test-try.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.run" />
       <item itemvalue="Python.GradientDescent" />
       <item itemvalue="Python.PoolModule" />
-      <item itemvalue="Python.Config" />
-      <item itemvalue="Python.run (1)" />
+      <item itemvalue="Python.test-try" />
+      <item itemvalue="Python.PerceptronModule" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.PerceptronModule" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.test-try" />
         <item itemvalue="Python.GradientDescent" />
         <item itemvalue="Python.PoolModule" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.Config" />
-        <item itemvalue="Python.run (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -358,7 +358,7 @@
       <workItem from="1564456233289" duration="5306000" />
       <workItem from="1564472311900" duration="21752000" />
       <workItem from="1564569545151" duration="2818000" />
-      <workItem from="1564647200908" duration="17830000" />
+      <workItem from="1564647200908" duration="27617000" />
     </task>
     <servers />
   </component>
@@ -404,13 +404,14 @@
     <SUITE FILE_PATH="coverage/bilibilivideohot$RedisModule.coverage" NAME="RedisModule Coverage Results" MODIFIED="1563880752269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProxyPool" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$test19_6_6.coverage" NAME="test19-6-6 Coverage Results" MODIFIED="1560228821934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$ToolModule.coverage" NAME="ToolModule Coverage Results" MODIFIED="1563420107604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$GradientDescent.coverage" NAME="GradientDescent Coverage Results" MODIFIED="1564743230441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$GradientDescent.coverage" NAME="GradientDescent Coverage Results" MODIFIED="1564795727724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$Config.coverage" NAME="Config Coverage Results" MODIFIED="1564717761925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$1.coverage" NAME="1 Coverage Results" MODIFIED="1563097625599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$test_process.coverage" NAME="test_process Coverage Results" MODIFIED="1561815860272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$other.coverage" NAME="other Coverage Results" MODIFIED="1562036121428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$SpiderModule.coverage" NAME="SpiderModule Coverage Results" MODIFIED="1563251567687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$PoolModule.coverage" NAME="PoolModule Coverage Results" MODIFIED="1564723313753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProxyPool" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$PoolModule.coverage" NAME="PoolModule Coverage Results" MODIFIED="1564795080671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProxyPool" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$test_try.coverage" NAME="test-try Coverage Results" MODIFIED="1564796945971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$MasModule.coverage" NAME="MasModule Coverage Results" MODIFIED="1562991956530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$chrometest.coverage" NAME="chrometest Coverage Results" MODIFIED="1560229295946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$DatabaseModule.coverage" NAME="DatabaseModule Coverage Results" MODIFIED="1564324184610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProxyPool" />
@@ -420,10 +421,10 @@
     <SUITE FILE_PATH="coverage/bilibilivideohot$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1564622154709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$MultiProcessModule.coverage" NAME="MultiProcessModule Coverage Results" MODIFIED="1562984666754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$proxy_test.coverage" NAME="proxy_test Coverage Results" MODIFIED="1563788704879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProxyPool" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$PerceptronModule.coverage" NAME="PerceptronModule Coverage Results" MODIFIED="1564476091710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$PerceptronModule.coverage" NAME="PerceptronModule Coverage Results" MODIFIED="1564817536636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MachineLearning" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$Coroutines.coverage" NAME="Coroutines Coverage Results" MODIFIED="1564110255047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1559832684644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/bilibilivideohot$run.coverage" NAME="run Coverage Results" MODIFIED="1564719096383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
+    <SUITE FILE_PATH="coverage/bilibilivideohot$run.coverage" NAME="run Coverage Results" MODIFIED="1564801244921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bilibiliSpider" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$test_request.coverage" NAME="test_request Coverage Results" MODIFIED="1564133610694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExperimentFeature" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$spider_ranklist.coverage" NAME="spider_ranklist Coverage Results" MODIFIED="1560267773462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bilibilivideohot$test_server.coverage" NAME="test_server Coverage Results" MODIFIED="1563767685737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProxyPool" />

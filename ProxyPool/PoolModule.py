@@ -203,16 +203,16 @@ class proxy_pool():
 
 
 if __name__ == '__main__':
-    # test = proxy_pool()
-    # test.start_work()
+    test = proxy_pool()
+    test.start_work()
 
-    import requests
-    url = 'http://httpbin.org/ip'
-    ip = '39.97.50.177:6677'
-    res = requests.get(
-        url=url,
-        proxies={
-            'http': "http://{}".format(ip)
-        }
-    )
-    print(res.text)
+    # import requests
+    # url = 'http://httpbin.org/ip'
+    # ip = '39.97.50.177:6677'
+    # res = requests.get(
+    #     url=url,
+    #     proxies={
+    #         'http': "http://{}".format(ip)
+    #     }
+    # )
+    # print(res.text)

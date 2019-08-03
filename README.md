@@ -45,6 +45,8 @@
         Perfect flask server api, get_one api, feedback api
     - 2019/8/2
         Add GradientDescent module(.ipynb for jupyter Notebook)
+    - 2019/8/3
+        Perceptron bias calculate bug fix
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update

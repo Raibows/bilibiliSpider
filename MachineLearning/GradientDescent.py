@@ -16,6 +16,34 @@ def read_wine():
     # print(vecs, exps)
     return vecs, exps
 
+
+def normalize(X, y):
+    X = np.array(X)
+    y = np.array(y)
+    y = y.reshape((len(y), 1))
+    X_shape = X.shape
+    for j in range(0, X_shape[1]):
+        _mean = np.mean(X[:, j])
+        _max = np.max(X[:, j])
+        _min = np.min(X[:, j])
+        #         print('hhhh', X[:, j])
+        #         print(_mean, _max, _min)
+        X[:, j] -= _mean
+        X[:, j] /= (_max - _min)
+    #         print('jjjj', X[:, j])
+    _mean = np.mean(y)
+    _max = np.max(y)
+    _min = np.min(y)
+    y = y.astype('float64')
+    y[0, :] -= _mean
+    y[0, :] /= (_max - _min)
+    X = X.tolist()
+    y = y.ravel().tolist()
+    return X, y
+
+
+
+
 class gradient_descent(repr_base_class):
     def __init__(self, variables:list, input_vecs:list, input_exps:list,
                  learning_step=0.01, max_iterations=1000, constant=False):
@@ -99,12 +127,12 @@ class gradient_descent(repr_base_class):
             X[:, j] -= _mean
             X[:, j] /= (_max - _min)
         #         print('jjjj', X[:, j])
-        _mean = np.mean(y)
-        _max = np.max(y)
-        _min = np.min(y)
+        mean_ = np.mean(y)
+        max_ = np.max(y)
+        min_ = np.min(y)
         y = y.astype('float64')
-        y[0, :] -= _mean
-        y[0, :] /= (_max - _min)
+        y[0, :] -= mean_
+        y[0, :] /= (max_ - min_)
         self.__vecs = X
         self.__exps = y
 
@@ -114,9 +142,6 @@ class gradient_descent(repr_base_class):
 
     def get_predict_weight(self):
         return self.__theta.ravel().tolist()
-
-
-
 
 
 
@@ -134,11 +159,11 @@ if __name__ == '__main__':
         wine_vecs,
         wine_exps,
         learning_step=0.00001,
-        max_iterations=10000,
+        max_iterations=1000,
         constant=True
     )
     test.start_train()
-    #
+
     # weight = test.get_predict_weight()
     #
     # test_vecs = data.get('test_vecs')
@@ -151,14 +176,14 @@ if __name__ == '__main__':
     #     print(f'true {test_exps[_i]}, predict {predict}')
 
     # from MachineLearning import perceptron
-    #
+    # wine_vecs, wine_exps = normalize(wine_vecs, wine_exps)
     # test = perceptron(
-    #     variables=variables,
-    #     train_vecs=test_vecs,
-    #     train_exps=test_exps
+    #     variables=temp,
+    #     train_vecs=wine_vecs,
+    #     train_exps=wine_exps,
     # )
     # test.train(
-    #     train_iter_num=10000,
+    #     train_iter_num=1000,
     #     rate=0.001
     # )
 

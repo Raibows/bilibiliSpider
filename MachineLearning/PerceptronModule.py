@@ -22,7 +22,6 @@ def universal_activator(predict, expect):
 
 
 class perceptron():
-
     def __init__(
             self,
             variables,
@@ -105,6 +104,7 @@ class perceptron():
         '''
         self.__check()
         for i in range(train_iter_num):
+            self.__bias = 0
             self.__one_iteration(rate)
             self.__get_variance()
             log = f'train {i+1} \n{self}'
@@ -150,7 +150,7 @@ class perceptron():
             new_weight = rate * delta * item[0] + item[1] #w_i = w_i-1 + delta_w
             new_weights.append(new_weight)
         self.__weights = new_weights
-        self.__bias += delta * rate
+        self.__bias += delta / len(self.__train_exps)
 
     def __get_variance(self):
         predict_res = []
