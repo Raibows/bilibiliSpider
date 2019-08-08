@@ -26,3 +26,13 @@ class proxy():
 
     def __repr__(self):
         return self.__get_raw_address()
+
+    def __eq__(self, other):
+        return self.__get_raw_address() == other.__get_raw_address()
+
+
+if __name__ == '__main__':
+    x1 = proxy(123, 45, points=3)
+    y = [x1]
+    x2 = proxy(123, 452, points=3)
+    print(x2 in y)

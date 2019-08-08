@@ -47,6 +47,8 @@
         Add GradientDescent module(.ipynb for jupyter Notebook)
     - 2019/8/3
         Perceptron bias calculate bug fix
+    - 2019/8/8
+        Proxy class equal bug fix
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
