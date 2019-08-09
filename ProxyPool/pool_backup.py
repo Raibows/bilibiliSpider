@@ -115,6 +115,20 @@ class proxy_pool():
 
 
 if __name__ == '__main__':
+    import requests
+
+    url = 'http://httpbin.org/ip'
+    url = 'https://www.bilibili.com/'
+    ip = '39.97.50.177:6677'
+    # ip = '47.89.37.177:3128'
+    res = requests.get(
+        headers=ToolBox.tool_get_random_headers(),
+        url=url,
+        proxies={
+            'http': "http://{}".format(ip)
+        }
+    )
+    print(res.text)
     pass
     # test = proxy_pool()
     # test._get_proxy()

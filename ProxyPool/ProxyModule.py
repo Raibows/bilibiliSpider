@@ -28,7 +28,7 @@ class proxy():
         return self.__get_raw_address()
 
     def __eq__(self, other):
-        return self.__get_raw_address() == other.__get_raw_address()
+        return self.get_string_address() == other.get_string_address()
 
 
 if __name__ == '__main__':

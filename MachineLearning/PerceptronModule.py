@@ -107,6 +107,7 @@ class perceptron():
             self.__bias = 0
             self.__one_iteration(rate)
             self.__get_variance()
+            self.__bias /= len(self.__train_exps)
             log = f'train {i+1} \n{self}'
             print(log)
             self.__variance_result.append(self.__latest_variance)
@@ -150,7 +151,7 @@ class perceptron():
             new_weight = rate * delta * item[0] + item[1] #w_i = w_i-1 + delta_w
             new_weights.append(new_weight)
         self.__weights = new_weights
-        self.__bias += delta / len(self.__train_exps)
+        self.__bias += delta
 
     def __get_variance(self):
         predict_res = []
@@ -190,7 +191,7 @@ if __name__ == '__main__':
     import MachineLearning
 
     variables = [0.3, 1, 2.1, 0.66, 0.841, 0.247, 1.6, 7.1]
-    example = MachineLearning.fake_data(variables=variables, data_size=1000, error_data_ratio=0, precision=17)
+    example = MachineLearning.fake_data(variables=variables, data_size=1000, error_data_ratio=0.01, precision=17)
     data = example.get_test_data()
 
     test_vecs = data.get('test_vecs')
@@ -209,7 +210,7 @@ if __name__ == '__main__':
 
     model.train(
         train_iter_num=10000,
-        rate=0.01,
+        rate=1,
         stop_variance=1e-10
     )
     print(example)

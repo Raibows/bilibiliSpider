@@ -6,6 +6,7 @@ import aiohttp
 import asyncio
 import ToolBox
 import time
+import re
 
 
 
@@ -23,7 +24,10 @@ class proxy_pool():
     '''
     def __init__(self):
         self.__proxy_urls = [
-            r'https://www.kuaidaili.com/free/inha/{}/'
+            r'https://www.kuaidaili.com/free/inha/{}/',
+            [r'http://www.iphai.com/free/ng', r'http://www.iphai.com/free/wg'],
+            r'http://ip.jiangxianli.com/?page={}',
+            r'https://proxy-list.org/english/index.php?p={}',
         ]
         self.__test_ip_url = 'http://httpbin.org/ip'
         #http://icanhazip.com/ #another test ip
@@ -40,7 +44,6 @@ class proxy_pool():
         self.__semaphore = asyncio.Semaphore(default_coroutines_semaphore) #limit the number of coroutines
 
     async def __get_html(self, url):
-        async with self.__semaphore:
             async with aiohttp.ClientSession() as session:
                 async with session.get(
                     url=url,
@@ -71,7 +74,8 @@ class proxy_pool():
                 add_proxies.append(proxy)
                 print(f'Add {proxy}')
             else:
-                print(proxy.get_string_address(), proxy.points)
+                # print(proxy.get_string_address(), proxy.points)
+                pass
         self.__db.delete_proxies(delete_proxies)
         self.__db.add_proxies(add_proxies)
         print('Evaluate done!' ,ToolBox.tool_get_current_time())
@@ -82,8 +86,9 @@ class proxy_pool():
     async def __process_first_html(self):
         import os
         # tasks = [self.__get_html(self.__proxy_urls[0].format(_i)) for _i in range(1, 4)]
+        page_count = 4
         done = []
-        for _i in range(1, 4):
+        for _i in range(1, page_count):
             url = self.__proxy_urls[0].format(_i)
             html = await self.__get_html(url)
             done.append(html)
@@ -108,14 +113,79 @@ class proxy_pool():
             # os._exit(-1)
             for item in proxies:
                 proxy = ProxyPool.proxy(item[0].string, item[1].string)
-                if item not in self.__pool:
+                if proxy not in self.__pool:
                     self.__pool.append(proxy)
-                    print(f'got {proxy.get_string_address()}')
+                    print(f'process_first_html got {proxy.get_string_address()}')
         #     print('here', self.get_proxy_num())
         # print('final ', self.get_proxy_num())
         # os._exit(-1)
 
-    async def __check_available(self, proxy):
+
+    async def __process_second_html(self):
+        urls = self.__proxy_urls[1]
+        tasks = [self.__get_html(url) for url in urls]
+        done = await asyncio.gather(*tasks)
+        for res in done:
+            soup = BeautifulSoup(res, features='html5lib')
+            ipandport = soup.find_all('td')
+            for i, ip in enumerate(ipandport):
+                temp = re.findall('\d+\.\d+\.\d+\.\d+', ip.string)
+                if temp:
+                    port = ipandport[i+1].string
+                    port = port.strip()
+                    new = ProxyPool.proxy(temp[0], port)
+                    if new not in self.__pool:
+                        self.__pool.append(new)
+                        print(f'process_second_html got {new.get_string_address()}')
+
+
+    async def __process_third_html(self):
+        page_count = 2
+        urls = [self.__proxy_urls[2].format(_i+1) for _i in range(page_count)]
+        tasks = [self.__get_html(url) for url in urls]
+        done = await asyncio.gather(*tasks)
+        for html in done:
+            soup = BeautifulSoup(html, features='html5lib')
+            res = soup.find_all(
+                'td'
+            )
+            for _i, item in enumerate(res):
+                str_ = str(item.string)
+                temp = re.findall('\d+\.\d+\.\d+\.\d+', str_)
+                if temp:
+                    ip = temp[0]
+                    port = res[_i+1].string
+                    port = str(port)
+                    port = port.strip()
+                    new = ProxyPool.proxy(ip, port)
+                    if new not in self.__pool:
+                        self.__pool.append(new)
+                        print(f'process_third_html got {new.get_string_address()}')
+
+    async def __process_fourth_html(self):
+        page_count = 6
+        urls = [self.__proxy_urls[3].format(_i+1) for _i in range(page_count)]
+        tasks = [self.__get_html(url) for url in urls]
+        done = await asyncio.gather(*tasks)
+        import base64
+        for html in done:
+            proxies = re.findall(r"Proxy\('(.*?)'\)", html)
+            for proxy in proxies:
+                temp = base64.b64decode(proxy).decode()
+                ip = re.findall('\d+\.\d+\.\d+\.\d+', temp)
+                ip = ip[0]
+                port = re.findall(':\d+', temp)
+                port = port[0]
+                port = port[1:]
+                new = ProxyPool.proxy(ip, port)
+                if new not in self.__pool:
+                    self.__pool.append(new)
+                    print(f'process_fourth_html got {new.get_string_address()}')
+
+
+
+
+    async def __check_available(self, proxy:ProxyPool.proxy):
         proxy = proxy.get_string_address()
         print(f'checking {proxy}')
         try:
@@ -129,32 +199,43 @@ class proxy_pool():
                     )
             response_status = response.status
         except:
-            return False
+            print(proxy, '11111111111111111')
+            return (proxy, False)
         if response_status == 503:
-            return False
+            print(proxy, '22222222222222222')
+            return (proxy, False)
         try:
             temp = await response.json()
             if response_status == 200 and temp.get("origin"):
-                return True
+                return (proxy, True)
             else:
-                return False
+                print(proxy, '3333333333333333')
+                return (proxy, False)
         except:
-            return False
+            print(proxy, '4444444444444444444')
+            return (proxy, False)
 
 
     async def __timer_check(self):
-        if len(self.__pool) != 0:
-            proxy_num = self.get_proxy_num()
+        if self.get_proxy_num() != 0:
             tasks = [self.__check_available(item) for item in self.__pool]
             # print(tasks)
             done = await asyncio.gather(*tasks)
             # print(tasks)
             # print(done)
-            for _i in range(proxy_num):
-                if done[_i] == False:
-                    self.__pool[_i].points -= 3
+            mark_up = []
+            mark_down = []
+            for item in done:
+                if item[1]:
+                    mark_up.append(item[0])
                 else:
-                    self.__pool[_i].points += 3
+                    mark_down.append(item[0])
+            for proxy in self.__pool:
+                str_ = proxy.get_string_address()
+                if str_ in mark_up:
+                    proxy.points += 3
+                elif str_ in mark_down:
+                    proxy.points -= 3
         else:
             print('proxy pool is None')
 
@@ -171,8 +252,17 @@ class proxy_pool():
         # print(self.__proxy)
         return len(self.__pool)
 
+    async def __timer_spider(self):
+        tasks = [
+            # self.__process_first_html(),
+            self.__process_second_html(),
+            self.__process_third_html(),
+            # self.__process_fourth_html(),
+        ]
+        done = await asyncio.gather(*tasks)
+
     def __drive_timer_spider(self):
-        asyncio.run(self.__process_first_html())
+        asyncio.run(self.__timer_spider())
         print('Spider done!', ToolBox.tool_get_current_time())
         thread = threading.Timer(self.__spider_interval, self.__drive_timer_spider)
         thread.start()
@@ -185,6 +275,7 @@ class proxy_pool():
 
     def start_work(self):
         thread_spider = threading.Thread(target=self.__drive_timer_spider)
+
         thread_check = threading.Thread(target=self.__drive_timer_check)
         thread_evaluate = threading.Thread(target=self.__evaluate_pool)
         thread_print = threading.Thread(target=self.__print_status)
@@ -192,6 +283,7 @@ class proxy_pool():
 
 
         thread_spider.start()
+        time.sleep(30)
         thread_check.start()
         thread_evaluate.start()
         thread_print.start()
@@ -206,13 +298,6 @@ if __name__ == '__main__':
     test = proxy_pool()
     test.start_work()
 
-    # import requests
-    # url = 'http://httpbin.org/ip'
-    # ip = '39.97.50.177:6677'
-    # res = requests.get(
-    #     url=url,
-    #     proxies={
-    #         'http': "http://{}".format(ip)
-    #     }
-    # )
-    # print(res.text)
+
+
+
