@@ -60,7 +60,9 @@ class database():
         :return:string, proxy
         '''
         if self.get_num():
-            return self.__redis.randomkey()
+            byte_ = self.__redis.randomkey()
+            str_ = str(byte_, encoding='utf-8')
+            return str_
         else:
             return None
 

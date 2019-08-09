@@ -51,6 +51,7 @@
         Proxy class equal bug fixed
     - 2019/8/9
         ProxyPool evaluate rule bug fixed
+        ProxyPool ready for using steadily
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
@@ -111,8 +112,13 @@
     a few days ago. *aiohttp*, *Python async* documentations help me a lot.<br>
     The proxy pool module used *multi thread*, *coroutins* up to now. I have to say the spider procedure is more than 10 
     times faster than before after using *coroutines*. The next few days, I will try *redis* and *Flask* to build
-    my own proxy pool. 
-    
+    my own proxy pool. <br>
+9.2019/8/9<br>
+    Proxypool is all ready for using. It could fetch about 20 available HTTP proxies after one spider timer up to now.
+    But with little regret, the *asyncio.semaphore* couldn't work normally when I try to implement semaphore to *proxy check*
+    to control concurrency speed.<br>
+    Now I just need to perfect *Flask Server* for the spider to use conveniently. And it will be a big work as I could 
+    see.    
     
     
     
