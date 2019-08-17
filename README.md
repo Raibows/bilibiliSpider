@@ -52,6 +52,9 @@
     - 2019/8/9
         ProxyPool evaluate rule bug fixed
         ProxyPool ready for using steadily
+    - 2019/8/17
+        Perfect mas_module for using proxy_pool   
+        Delete MachineLearning module
 ## Journal
 1.2019/7/4<br>
     Bug and program exception occurred frequently when I update
@@ -118,7 +121,10 @@
     But with little regret, the *asyncio.semaphore* couldn't work normally when I try to implement semaphore to *proxy check*
     to control concurrency speed.<br>
     Now I just need to perfect *Flask Server* for the spider to use conveniently. And it will be a big work as I could 
-    see.    
+    see.<br>
+10.2019/8/17<br>
+    Decided to remove MachineLearning module from this project. Focus on bilibili spider and Proxypool. The project is
+    going to the end up to now. If you have some advice or bug feedback, please contact with me or propose an issue.   
     
     
     

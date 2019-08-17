@@ -14,8 +14,6 @@ if __name__ == '__main__':
         url=feedback_url,
         data=post_info
     )
-    print(res.text)
-
 
 
     pass

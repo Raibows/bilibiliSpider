@@ -354,5 +354,10 @@ if __name__ == '__main__':
     test = proxy_pool()
     test.start_work()
     url = 'http://www.66ip.cn/nmtq.php?getnum=20'
+    # url = r'https://www.kuaidaili.com/free/inha/1/'
+    # import requests
+    # import ToolBox
+    # html = requests.get(url, headers=ToolBox.tool_get_random_headers())
+    # print(html.text)
 
 
