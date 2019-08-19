@@ -7,6 +7,7 @@ import re
 import time
 import ToolBox
 import multiprocessing
+import ast
 
 class bilibili_spider():
     def __init__(self):
@@ -128,7 +129,8 @@ class bilibili_spider():
         try:
             video_time = re.findall(r'\"timelength\":\d+', res)[0]
             video_time = re.findall(r'\d+', video_time)[0]
-            video_time = int(eval(video_time) / 1000)
+            video_time = int(ast.literal_eval(video_time) / 1000)
+            # video_time = int(eval(video_time) / 1000)
         except:
             video_time = -1
             log = 'ERROR IN GETTING VIDEO LENGTH AID {}'.format(aid)

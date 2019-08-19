@@ -97,7 +97,7 @@ class database():
         :return: insert a special message to the database
         '''
         res = proxy_string_dict
-        if type(proxy_string_dict) == dict:
+        if isinstance(proxy_string_dict, dict):
             res = proxy_string_dict['http']
         if flag:
             self.__redis.rpush('increase', res)

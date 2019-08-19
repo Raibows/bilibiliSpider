@@ -93,7 +93,6 @@ class proxy_pool():
 
 
     async def __process_first_html(self):
-        import os
         # tasks = [self.__get_html(self.__proxy_urls[0].format(_i)) for _i in range(1, 4)]
         page_count = 4
         done = []
@@ -315,7 +314,7 @@ class proxy_pool():
             # self.__process_fifth_html(),
             self.__process_sixth_html(),
         ]
-        done = await asyncio.gather(*tasks)
+        await asyncio.gather(*tasks)
 
     def __drive_timer_spider(self):
         asyncio.run(self.__timer_spider())
