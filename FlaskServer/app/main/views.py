@@ -1,6 +1,7 @@
 from . import main
-from FlaskServer.app import database
+from FlaskServer.app import db
 from flask import request
+
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -13,6 +14,7 @@ def index():
     '''
     return info
 
+
 @main.route('/config', methods=['GET', 'POST'])
 def config():
     from Config import get_all_config_json
@@ -20,21 +22,24 @@ def config():
 
     return config_json
 
+
 @main.route('/proxy/get_one/string', methods=['GET'])
 def get_one_string():
-    temp = database.get_one_string()
+    temp = db.get_one_string()
     if temp:
         return temp
     else:
         return 'None'
 
+
 @main.route('/proxy/get_one/dict', methods=['GET'])
 def get_one_dict():
-    temp = database.get_one_dict()
+    temp = db.get_one_dict()
     if temp:
         return temp
     else:
         return 'None'
+
 
 @main.route('/proxy/feedback', methods=['POST'])
 def feedback():
@@ -53,15 +58,8 @@ def feedback():
     else:
         return 'failed'
     proxy = request.form.get('proxy')
-    database.proxy_feedback(
+    db.proxy_feedback(
         proxy_string_dict=proxy,
         flag=flag,
     )
     return info
-
-
-
-
-
-
-

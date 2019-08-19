@@ -63,7 +63,7 @@ class bilibili_spider():
         if self.mas_proxy_flag:
             try_count = 0
             html = bilibiliSpider.mas_get_html(url)
-            while html == None:
+            while html is None:
                 try_count += 1
                 if try_count == 3:
                     html = requests.get(url, headers=ToolBox.tool_get_random_headers())

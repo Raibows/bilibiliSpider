@@ -7,7 +7,7 @@ import time
 import requests
 import socket
 from Config import flaskserver_config
-defalut_proxy_server_address = flaskserver_config.flaskserver_host + ':' + str(flaskserver_config.flaskserver_port)
+default_proxy_server_address = flaskserver_config.flaskserver_host + ':' + str(flaskserver_config.flaskserver_port)
 import json
 
 
@@ -32,7 +32,7 @@ def mas_get_html(url):
             # print('proxy', proxy)
             html =  requests.get(url, headers=ToolBox.tool_get_random_headers(),
                                 proxies={"http": "http://{}".format(proxy)})
-            if html == None:
+            if html is None:
                 time.sleep(1)
                 continue
             # 使用代理访问
@@ -53,7 +53,7 @@ def mas_get_proxy_dict() -> dict or None:
     for ProxyPool Module
     :return:
     '''
-    url = defalut_proxy_server_address + '/proxy/get_one/dict'
+    url = default_proxy_server_address + '/proxy/get_one/dict'
     res = requests.get(url).text
     if res == 'None':
         return None
@@ -65,7 +65,7 @@ def mas_get_proxy_string() -> str or None:
     for ProxyPool Module
     :return:
     '''
-    url = defalut_proxy_server_address + '/proxy/get_one/string'
+    url = default_proxy_server_address + '/proxy/get_one/string'
     res = requests.get(url).text
     if res == 'None':
         return None
@@ -151,7 +151,7 @@ def mas_get_host_ip():
 
 if __name__ == '__main__':
 
-    print(defalut_proxy_server_address)
+    print(default_proxy_server_address)
 
 
     pass

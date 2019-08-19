@@ -17,6 +17,10 @@ default_check_proxy_timeout = proxypool_config.check_proxy_timeout
 default_coroutines_semaphore = proxypool_config.coroutines_semaphore
 default_evaluate_interval = proxypool_config.evaluate_interval
 
+
+
+
+
 class proxy_pool():
     '''
     proxy pool
@@ -59,6 +63,22 @@ class proxy_pool():
         except Exception as e:
             print(f'ERROR IN GET {url} {e}')
             return []
+
+
+
+    def __universal_soup(self, flag:str, html):
+        res = html
+        soup = BeautifulSoup(res, features='html5lib')
+        ipandport = soup.find_all('td')
+        for i, ip in enumerate(ipandport):
+            temp = re.findall('\d+\.\d+\.\d+\.\d+', ip.string)
+            if temp:
+                port = ipandport[i + 1].string
+                port = port.strip()
+                new = ProxyPool.proxy(temp[0], port)
+                if new not in self.__pool:
+                    self.__pool.append(new)
+                    print(f'process_{flag}_html got {new.get_string_address()}')
 
 
     def __evaluate_pool(self):
@@ -136,17 +156,7 @@ class proxy_pool():
         done = await asyncio.gather(*tasks)
         for res in done:
             if res:
-                soup = BeautifulSoup(res, features='html5lib')
-                ipandport = soup.find_all('td')
-                for i, ip in enumerate(ipandport):
-                    temp = re.findall('\d+\.\d+\.\d+\.\d+', ip.string)
-                    if temp:
-                        port = ipandport[i+1].string
-                        port = port.strip()
-                        new = ProxyPool.proxy(temp[0], port)
-                        if new not in self.__pool:
-                            self.__pool.append(new)
-                            print(f'process_second_html got {new.get_string_address()}')
+                self.__universal_soup('second', res)
 
 
     async def __process_third_html(self):
@@ -224,21 +234,7 @@ class proxy_pool():
         done = await asyncio.gather(*tasks)
         for html in done:
             if html:
-                soup = BeautifulSoup(html, features='html5lib')
-                ipandport = soup.find_all('td')
-                for i, ip in enumerate(ipandport):
-                    temp = re.findall('\d+\.\d+\.\d+\.\d+', ip.string)
-                    if temp:
-                        port = ipandport[i+1].string
-                        port = port.strip()
-                        new = ProxyPool.proxy(temp[0], port)
-                        if new not in self.__pool:
-                            self.__pool.append(new)
-                            print(f'process_sixth_html got {new.get_string_address()}')
-
-
-
-
+                self.__universal_soup('sixth', html)
 
     async def __check_available(self, proxy:ProxyPool.proxy):
         proxy = proxy.get_string_address()
