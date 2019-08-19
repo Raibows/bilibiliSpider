@@ -1,4 +1,7 @@
 ## Update Record
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0804d29d2826450aa15d191dc25d7c06)](https://app.codacy.com/app/Raibows/bilibiliRankSpider?utm_source=github.com&utm_medium=referral&utm_content=Raibows/bilibiliRankSpider&utm_campaign=Badge_Grade_Dashboard)
+
     - 2019/6/12 
         finish spider module, now could get original data from bilibili
     - 2019/7/2
