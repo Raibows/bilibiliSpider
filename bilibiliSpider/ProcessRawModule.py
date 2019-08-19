@@ -15,6 +15,7 @@ default_spider.mas_proxy_flag = spider_config.mas_proxy_flag
 default_tasks = spider_config.tasks
 default_multi_processor_flag = spider_config.multi_processor_flag
 default_multi_processor_num = spider_config.multi_processor_num
+default_rank_type = spider_config.rank_type
 
 
 
@@ -75,7 +76,7 @@ def process_raw_user_info(mid, spider=default_spider):
 
 
 
-def process_one_task(video_category, spider=default_spider, rank_type='origin'):
+def process_one_task(video_category, rank_type='origin', spider=default_spider):
 
     info = []
     head = ['0rank_type', '1video_type', '2video_id', '3ranking',
@@ -174,7 +175,7 @@ def process_multi_tasks(tasks=default_tasks, rank_tyoe='origin'):
         max_cpu_count = 1
     p = Pool(max_cpu_count)
     for task in tasks:
-        p.apply_async(process_one_task, args=(task,))
+        p.apply_async(process_one_task, args=(task, rank_tyoe))
 
     p.close()
     p.join()
@@ -251,9 +252,9 @@ def process_run_main(multi_processor_flag=default_multi_processor_flag):
     print('spider will start in {} seconds ...'.format(10))
     time.sleep(5)
     if multi_processor_flag:
-        process_multi_tasks()
+        process_multi_tasks(rank_tyoe=default_rank_type)
     else:
-        process_single_tasks()
+        process_single_tasks(rank_type=default_rank_type)
 
     process_merge_csv(default_tasks, default_output_path)
 
