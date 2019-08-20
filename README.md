@@ -1,4 +1,4 @@
-# 📺RankSpider
+<h1 id="title">📺RankSpider</h1>
 <p align="center">
 <a href="https://github.com/Raibows/bilibiliRankSpider/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Raibows/bilibiliRankSpider"></a>
 <a href="https://github.com/Raibows/bilibiliRankSpider/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Raibows/bilibiliRankSpider"></a>
@@ -11,15 +11,32 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
 <b>This project is only for learning Python, commercial using is strictly prohibited. I will delete this project at once in case of infringement.</b>
 </p>
 
-## Requirement
->1. Linux or Windows
->2. Python Version >= 3.7
->3. Virtualenv Strongly Suggested
->4. Packages Requirements List you could see in <a href="./requirements.txt">requirements.txt</a>
+---
 
-## Fast Guidance
-0. Check your enviroment whether satisfy Requirment above.
-1. clone this project to your local
+## Contents
+- <a href="#title">Introduction</a>
+- [Requirement](#requirement)
+- [QuickStart](#quick-start)
+- [Advanced Usage](#advanced-usage)
+- [Overview](#function-overview)
+- [Journal](#journal)
+- [Update Record](#update-record)
+- [WARNING](#warning)
+---
+
+## Requirement
+| Item  |  Necessary | Statement  |
+| ------------ | ------------ | ------------ |
+| Linux or Windows  | :fa-check:  | Linux or Windows Supported  |
+| Python Interpretor | :fa-check:  |  Make sure your Python version >=3.7 |
+| Redis |  :fa-times: |  Only for ProxyPool, do not affect Spider |
+|  Python Packages | :fa-check:  | Requirements List you could see in <a href="./requirements.txt">requirements.txt</a>  |
+| Python Virtual Environment | :fa-times: | Not necessary but strongly suggested |
+
+## Quick Start
+1. Check your enviroment whether satisfy Requirment above.
+1. Install
+    clone this project to your local
     ```
     git clone https://github.com/Raibows/bilibiliRankSpider
     ```
@@ -31,15 +48,18 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
     or use Conda.
 3. Activate virtual environment
     Linux:
-    >source ./venv/bin/activate
-    
+	```
+    source ./venv/bin/activate
+	```
     Windows:
-    >. ./venv/Scripts/activate
-4. Install Packages
+	```
+    . ./venv/Scripts/activate
+	```
+4. Install Necessary Packages
     ```
     pip3 install -r requirements.txt
     ```
-5. Make your own Configuration
+5. **Make your own Configuration**
     Create one .py file named Config in the root directory of this project. Make your configuration, for example like below
     ```
     class spider_config():
@@ -61,17 +81,91 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
             'entertainment',
             'movie'
         ]
+        rank_type = 'origin' #or all
         multi_processor_flag = True
-        mas_proxy_pool_ip = _ip_proxy_pool_addr
+        mas_proxy_pool_ip = '127.0.0.1:5010'
         multi_processor_num = 2
         coroutine = True # can't change`
     ```
+    I have updated my <a href="./Config.py">Config.py</a> as example. You could edit it as you like.
 6. Run your Spider
     ```
     python3 run.py
     ```
-## Advanced
-To be continued.
+## Advanced Usage
+1. Select what info you want to get
+    Edit ``spider_config class`` in ``Config.py``
+    ``tasks`` attribute is **video types**, default is all types video  
+    ``rank_type`` attribute is **rank types** with **origin** or **all** for you to choose, default is origin
+1. Use *Multiprocessor* to accelerate spider
+    Edit ``spider_config class`` in ``Config.py``
+    ```
+    multi_processor_flag = True
+    multi_processor_num = your cpu count
+    ```
+2. Use *ProxyPool* to avoid being banned
+    Here I strongly recommend <a href="https://github.com/jhao104/proxy_pool">proxy_pool</a>, more stable than my project's ProxyPool.
+    - Edit ``spider_config class`` in ``Config.py`` first
+        ```
+        multi_processor_flag = True
+        mas_proxy_pool_ip = your proxy_pool server get-proxy api address
+        ```
+    - Then install Redis for Linux or Windows and start Redis service
+    - Lanuch <a href="https://github.com/jhao104/proxy_pool">proxy_pool</a> wait a few minutes
+    - Run Spider
+        ```
+        python3 ./bilibiliSpider/run.py
+        ```
+    If you want to use **internal ProxyPool Module**, please read the below tips.
+3. About **ToolBox Module**
+    ToolBox Module has a lot of useful functions for all modules in this project to use. It's necessary and fundamental for this project.
+    - Change FakeHeaders Browser if you want, default is *Chrome*
+    - Set your own logging_path
+        ```
+        logging_path = your own path
+        ```
+5. How to use **internal ProxyPool** ?
+    - install Redis first
+    - Edit ``proxypool_config class`` in ``Config.py``
+        ```
+        class proxypool_config(repr_base_class):
+            check_interval = 150 #seconds
+            spider_interval = 300 #seconds
+            print_interval = 15
+            evaluate_interval = 30
+            check_proxy_timeout = 10
+            coroutines_semaphore = 10 #limit the number of coroutines
+
+            database_type = 'Redis'
+            database_host = 'localhost'
+            database_port = '6379'
+            database_password = None
+            database_init_flushall = True
+        ```
+        Make sure your Redis Database related configurations is right. Other configurations you need to read **ProxyPool** Designs in [Overview](#function-overview).
+    - Run ProxyPool
+        ```
+        python3 ./ProxyPool/run.py
+        ``` 
+    - You still need to read next tips after it runs successfully 
+6. About **FlaskServer Module**
+    FlaskServer Module is for offering useful proxies from database. So just like access a website, get a useful proxy from a **special url**. And I have completed related functions in ``./bilibiliSpider/MasModule.py``that could let you get proxies and feedback to the proxies. Details are below:
+    - ``mas_get_proxy_dict()``
+        get a useful proxy from FlaskServer in dict format
+    - ``mas_get_proxy_string()``
+        get a useful proxy from FlaskServer in string format
+    - ``mas_get_html(url)``
+        There are 2 **different** ``mas_get_html()`` but have **the same name** functions in MasModule. If you use <a href="https://github.com/jhao104/proxy_pool">proxy_pool</a> recommended above, use the **first** ``mas_get_html()`` function and annotate the **second** ``mas_get_html()`` function.
+        If you use **internal ProxyPool Module**, try the **second** ``mas_get_html()`` function.
+## Function Overview
+#### bilibiliSpider:
+![avatar](https://github.com/Raibows/MarkdownPhotos/raw/master/bilibilivideohot/bilibilispider-Design1.png)
+#### ProxyPool:
+![avatar](https://github.com/Raibows/MarkdownPhotos/raw/master/bilibilivideohot/ProxyPool-Design1.png)
+
+#### FlaskServer
+![avatar](https://github.com/Raibows/MarkdownPhotos/raw/master/bilibilivideohot/FlaskServer-Design.png)
+
 ## Journal
 1. 2019/7/4  
     Bugs and program exception occurred frequently when I update spider module to get additional video info through some other apis. And I gradually find the risk to get info directlyfrom a video page is so great. A big problem is you got aid of a video in the ranking list but this video has been deleted.Almost every functions that get info by a aid won't work well asexpected.  
@@ -174,6 +268,6 @@ To be continued.
 26. 2019/8/19
     * add user guidance
     
-    
-        
+## WARNING   
+<b>This project is only for learning Python, commercial using is strictly prohibited. I will delete this project at once in case of infringement.</b>        
         
