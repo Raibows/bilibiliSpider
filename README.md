@@ -1,3 +1,8 @@
+<head> 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script> 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script> 
+</head> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 <h1 id="title">📺RankSpider</h1>
 <p align="center">
 <a href="https://github.com/Raibows/bilibiliRankSpider/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Raibows/bilibiliRankSpider"></a>
@@ -8,7 +13,9 @@
 </p>
 <p align="left">
 A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I> and <I>multiprocessing</I> some base packages for spider. ProxyPool used <I>Python Asyncio</I>. Hope this project could help you learn <I>Python Spider</I>.<br>
-<b>This project is only for learning Python, commercial using is strictly prohibited. I will delete this project at once in case of infringement.</b>
+<b>This project is only for learning Python, commercial using is strictly prohibited. I will delete this project at once in case of infringement.</b><br>
+Please star or fork my project if you like it 😁<br>
+And welcome to propose an issue if you have bugs to feedback.
 </p>
 
 ---
@@ -27,11 +34,11 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
 ## Requirement
 | Item  |  Necessary | Statement  |
 | ------------ | ------------ | ------------ |
-| Linux or Windows  | :fa-check:  | Linux or Windows Supported  |
-| Python Interpretor | :fa-check:  |  Make sure your Python version >=3.7 |
-| Redis |  :fa-times: |  Only for ProxyPool, do not affect Spider |
-|  Python Packages | :fa-check:  | Requirements List you could see in <a href="./requirements.txt">requirements.txt</a>  |
-| Python Virtual Environment | :fa-times: | Not necessary but strongly suggested |
+| Linux or Windows  | <i class="fas fa-check"></i>  | Linux or Windows Supported  |
+| Python Interpretor | <i class="fas fa-check"></i>  |  Make sure your Python version >=3.7 |
+| Redis |  <i class="fas fa-times"></i> |  Only for ProxyPool, do not affect Spider |
+|  Python Packages | <i class="fas fa-check"></i>  | Requirements List you could see in <a href="./requirements.txt">requirements.txt</a>  |
+| Python Virtual Environment | <i class="fas fa-times"></i> | Not necessary but strongly suggested |
 
 ## Quick Start
 1. Check your enviroment whether satisfy Requirment above.
@@ -46,7 +53,7 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
     virtualenv venv
     ```
     or use Conda.
-3. Activate virtual environment
+3. Activate virtual environment(**virtualenv**)  
     Linux:
 	```
     source ./venv/bin/activate
@@ -59,7 +66,7 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
     ```
     pip3 install -r requirements.txt
     ```
-5. **Make your own Configuration**
+5. **Make your own Configuration**  
     Create one .py file named Config in the root directory of this project. Make your configuration, for example like below
     ```
     class spider_config():
@@ -93,17 +100,17 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
     python3 run.py
     ```
 ## Advanced Usage
-1. Select what info you want to get
-    Edit ``spider_config class`` in ``Config.py``
+1. Select what info you want to get  
+    Edit ``spider_config class`` in ``Config.py``  
     ``tasks`` attribute is **video types**, default is all types video  
     ``rank_type`` attribute is **rank types** with **origin** or **all** for you to choose, default is origin
-1. Use *Multiprocessor* to accelerate spider
+1. Use *Multiprocessor* to accelerate spider  
     Edit ``spider_config class`` in ``Config.py``
     ```
     multi_processor_flag = True
     multi_processor_num = your cpu count
     ```
-2. Use *ProxyPool* to avoid being banned
+2. Use *ProxyPool* to avoid being banned  
     Here I strongly recommend <a href="https://github.com/jhao104/proxy_pool">proxy_pool</a>, more stable than my project's ProxyPool.
     - Edit ``spider_config class`` in ``Config.py`` first
         ```
@@ -117,14 +124,14 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
         python3 ./bilibiliSpider/run.py
         ```
     If you want to use **internal ProxyPool Module**, please read the below tips.
-3. About **ToolBox Module**
+3. About **ToolBox Module**  
     ToolBox Module has a lot of useful functions for all modules in this project to use. It's necessary and fundamental for this project.
     - Change FakeHeaders Browser if you want, default is *Chrome*
     - Set your own logging_path
         ```
         logging_path = your own path
         ```
-5. How to use **internal ProxyPool** ?
+5. How to use **internal ProxyPool** ?  
     - install Redis first
     - Edit ``proxypool_config class`` in ``Config.py``
         ```
@@ -148,7 +155,7 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
         python3 ./ProxyPool/run.py
         ``` 
     - You still need to read next tips after it runs successfully 
-6. About **FlaskServer Module**
+6. About **FlaskServer Module**  
     FlaskServer Module is for offering useful proxies from database. So just like access a website, get a useful proxy from a **special url**. And I have completed related functions in ``./bilibiliSpider/MasModule.py``that could let you get proxies and feedback to the proxies. Details are below:
     - ``mas_get_proxy_dict()``
         get a useful proxy from FlaskServer in dict format
@@ -157,6 +164,30 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
     - ``mas_get_html(url)``
         There are 2 **different** ``mas_get_html()`` but have **the same name** functions in MasModule. If you use <a href="https://github.com/jhao104/proxy_pool">proxy_pool</a> recommended above, use the **first** ``mas_get_html()`` function and annotate the **second** ``mas_get_html()`` function.
         If you use **internal ProxyPool Module**, try the **second** ``mas_get_html()`` function.
+7. Add a new api for **bilibiliSpider**  
+    Edit ``bilibili_spider class`` in ``./bilibiliSpider/SpiderModule.py``, for example  
+    1. add a new attribute to ``__init__()``
+        ```
+        self.api_xxxx = api's url
+        ```
+    2. add a new function to get raw info from new added api
+        For example, to get one user's raw info
+        ```
+        def get_raw_user_info(self, mid):
+            # param mid: users mid
+            # return: dict, this users raw info
+            url = self.api_user_info.format(mid)
+            res = self.__get_html_requests(url)
+            res_dict = res.json()
+            return res_dict
+        ```
+    3. add related ``process_raw()`` to ``./bilibiliSpider/ProcessRawModule.py``
+
+8. Add new free-proxy-website to **internal ProxyPool**  
+    You need to master some *Python Async* and *Python aiohttp* to write a *async* function because **internal ProxyPool** used *Python Async**. Details could be seen in Python Official Documents.  
+9. Project Structure  
+    Next chapter **Function Overview** could help you a lot to know this project's design and structure.
+        
 ## Function Overview
 #### bilibiliSpider:
 ![avatar](https://github.com/Raibows/MarkdownPhotos/raw/master/bilibilivideohot/bilibilispider-Design1.png)
@@ -267,6 +298,8 @@ A project for bilibiliRankSpider and free proxy pool. Spider used <I>requests</I
     * Delete MachineLearning module
 26. 2019/8/19
     * add user guidance
+27. 2019/8/21
+    * update ``Config.py`` and perfect ``README.md``
     
 ## WARNING   
 <b>This project is only for learning Python, commercial using is strictly prohibited. I will delete this project at once in case of infringement.</b>        

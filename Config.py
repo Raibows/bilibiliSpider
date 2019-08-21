@@ -69,7 +69,7 @@ class repr_base_class:
 class spider_config(repr_base_class):
     current_path = None
     output_path = r'../data/bilibili_rank_data.csv'
-    mas_proxy_flag = True
+    mas_proxy_flag = False
     tasks = [
         'all',
         'animation',
