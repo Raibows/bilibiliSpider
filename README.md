@@ -1,8 +1,3 @@
-<head> 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script> 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script> 
-</head> 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 <h1 id="title">📺RankSpider</h1>
 <p align="center">
 <a href="https://github.com/Raibows/bilibiliRankSpider/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Raibows/bilibiliRankSpider"></a>
@@ -34,11 +29,11 @@ And welcome to propose an issue if you have bugs to feedback.
 ## Requirement
 | Item  |  Necessary | Statement  |
 | ------------ | ------------ | ------------ |
-| Linux or Windows  | <i class="fas fa-check"></i>  | Linux or Windows Supported  |
-| Python Interpretor | <i class="fas fa-check"></i>  |  Make sure your Python version >=3.7 |
-| Redis |  <i class="fas fa-times"></i> |  Only for ProxyPool, do not affect Spider |
-|  Python Packages | <i class="fas fa-check"></i>  | Requirements List you could see in <a href="./requirements.txt">requirements.txt</a>  |
-| Python Virtual Environment | <i class="fas fa-times"></i> | Not necessary but strongly suggested |
+| Linux or Windows  | ✔  | Linux or Windows Supported  |
+| Python Interpretor | ✔  |  Make sure your Python version >=3.7 |
+| Redis |  ❌ |  Only for ProxyPool, do not affect Spider |
+|  Python Packages | ✔  | Requirements List you could see in <a href="./requirements.txt">requirements.txt</a>  |
+| Python Virtual Environment | ❌ | Not necessary but strongly suggested |
 
 ## Quick Start
 1. Check your enviroment whether satisfy Requirment above.
