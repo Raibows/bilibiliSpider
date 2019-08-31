@@ -1,9 +1,9 @@
 <h1 id="title">📺RankSpider</h1>
 <p align="center">
-<a href="https://github.com/Raibows/bilibiliRankSpider/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Raibows/bilibiliRankSpider"></a>
-<a href="https://github.com/Raibows/bilibiliRankSpider/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Raibows/bilibiliRankSpider"></a>
-<a href="https://github.com/Raibows/bilibiliRankSpider/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Raibows/bilibiliRankSpider"></a>
-<a href="https://github.com/Raibows/bilibiliRankSpider/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Raibows/bilibiliRankSpider"></a>
+<a href="https://github.com/Raibows/bilibiliSpider/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Raibows/bilibiliSpider"></a>
+<a href="https://github.com/Raibows/bilibiliSpider/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Raibows/bilibiliSpider"></a>
+<a href="https://github.com/Raibows/bilibiliSpider/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Raibows/bilibiliSpider"></a>
+<a href="https://github.com/Raibows/bilibiliSpider/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Raibows/bilibiliSpider"></a>
 <a href="https://www.codacy.com/app/Raibows/bilibiliRankSpider?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Raibows/bilibiliRankSpider&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/51f521e5189748dbafd845f01b187817"/></a><br>
 </p>
 <p align="left">
@@ -179,7 +179,7 @@ And welcome to propose an issue if you have bugs to feedback.
     3. add related ``process_raw()`` to ``./bilibiliSpider/ProcessRawModule.py``
 
 8. Add new free-proxy-website to **internal ProxyPool**  
-    You need to master some *Python Async* and *Python aiohttp* to write a *async* function because **internal ProxyPool** used *Python Async**. Details could be seen in Python Official Documents.  
+    You need to master some *Python Async* and *Python aiohttp* to write a *async* function because **internal ProxyPool** used *Python Async*. Details could be seen in Python Official Documents.  
 9. Project Structure  
     Next chapter **Function Overview** could help you a lot to know this project's design and structure.
         
