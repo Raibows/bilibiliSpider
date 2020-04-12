@@ -9,7 +9,7 @@ def index():
     Author:                ChiZuo
     Github:                https://github.com/Raibows/bilibiliRankSVM
     If you like this project, please star it!
-    If you have any advice, please contact with me, raibows@hotmail.com.
+    If you have any advice, please contact with me, luckychizuo@gmail.com.
     And I need your help for perfecting this project!
     '''
     return info
